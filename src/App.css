@@ -23,3 +23,10 @@
   border: 1px solid #ccc;
   padding: 10px;
 }
+
+/*star*/
+.star {
+  color:yellow;
+  cursor:pointer;
+  font-size: 52px;
+}
