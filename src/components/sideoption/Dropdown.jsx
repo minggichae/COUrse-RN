@@ -1,11 +1,11 @@
-function Dropdown() {
-
+export default function Dropdown() {
     return (
       <>
-        <li>마이페이지</li>
-        <li>로그아웃</li>
+        <li>10</li>
+        <li>20</li>
+        <li>30</li>
+        <li>40</li>
       </>
     );
   }
   
-  export default Dropdown;
