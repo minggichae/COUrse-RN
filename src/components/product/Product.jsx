@@ -5,7 +5,7 @@ import Dropdown from '../sideoption/Dropdown.jsx';
 export default function Product() {
     const [categoryValue, setCategoryValue] = useState("");
     const [view, setView] = useState(false);
-    const scrollRef = useRef(null); 
+    const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
 
     const saveCategory = (e) => { {/*카테고리 value 값 가져오기*/}
         setCategoryValue(e.target.value);
@@ -14,15 +14,17 @@ export default function Product() {
  
 
     const handleScroll = () => {
-        // Scroll to the detail information section
+        //데이터 저장 후 세부 정보 기입란으로 스크롤하는 로직 넣기
         if (scrollRef.current) {
             scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+            {/*
+                .current: DOM 요소의 값을 저장할 수 있는 프로퍼티 
+                scrollIntoView: 해당 요소로 이동, current 프로퍼티에 저장된 DOM 요소의
+                객체값으로 view 이동
+            */}
         }
     };
 
-    // const handleScroll = () => {
-    //     //데이터 저장 후 세부 정보 기입란으로 스크롤하는 로직 넣기
-    // }
     const handleResult = () => {
         //결과 화면으로 이동하는 로직 추가
     } 
@@ -39,7 +41,7 @@ export default function Product() {
         <button onClick={handleScroll}>
             검색 세부 정보 입력 페이지로 이동하기
         </button>
-        {/*페이지 스크롤 로직 필요, 대신 렌더링 하는 것처럼은 X */}
+
 
         <div ref={scrollRef} className='Detail__section'>
         <div className='Star__container'>별점 <Star /></div>
