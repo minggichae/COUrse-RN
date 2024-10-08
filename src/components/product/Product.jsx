@@ -66,3 +66,8 @@ export default function Product() {
         </>
     )
 }
+
+//!! CSS 진행 - 별점, 카테고리 박스, 버튼, 드롭다운
+//!! Framer motion 적용
+//!! Header, Footer 수정
+//!! Result page 제작 및 페이지 이동 handle 함수 완성

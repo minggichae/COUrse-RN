@@ -25,8 +25,19 @@
 }
 
 /*star*/
-.star {
+.Fastar {
   color:yellow;
   cursor:pointer;
   font-size: 52px;
 }
+
+.FaRegstar {
+  color: gray;
+  cursor:pointer;
+  font-size: 52px;
+}
+
+.FaRegstar:hover,:focus{
+  color: yellow;
+}
+
