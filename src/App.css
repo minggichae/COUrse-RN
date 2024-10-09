@@ -37,7 +37,48 @@
   font-size: 52px;
 }
 
-.FaRegstar:hover,:focus{
+.FaRegstar:hover,
+.FaRegstar:focus{
   color: yellow;
 }
 
+/*dropdown*/
+.Dropdown__container {
+  position: relative;
+  display: inline-block;
+}
+
+.Dropdown {
+  background: #0B868E;
+	color: #fff;
+	font-weight: bold;
+	padding: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.Dropdown:hover {
+  background: #66CC99;
+	color: #333;
+}
+
+.Dropdown__detail {
+  position: absolute;
+	width: 120px;
+	background: #ccc;
+	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+	z-index: 5;
+  margin-top: 20px;
+}
+
+
+.Dropdown__detail div {
+  display: block;
+	color: #333;
+	padding: 10px;
+}
+
+.Dropdown__detail div:hover{
+  background: #333;
+	color: #fff;
+}

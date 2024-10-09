@@ -4,7 +4,6 @@ import Dropdown from '../sideoption/Dropdown.jsx';
 
 export default function Product() {
     const [categoryValue, setCategoryValue] = useState("");
-    const [view, setView] = useState(false);
     const [error, setError] = useState("");
     const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
 
@@ -52,14 +51,8 @@ export default function Product() {
 
         <div className='Error__container'>{error}</div>
         <div ref={scrollRef}>
-        <div className='Star__container'>별점 <Star /></div>
-        <div className='Dropdown__container'>
-            <ul onClick={() => {setView(!view)}}> {/*click시 view 상태 반대로*/}
-	        추천 품목 출력 개수
-	        {view ? '▲' : '▼'} 
-	        {view && <Dropdown />} {/* true일 때만 Dropdown 컴포넌트 렌더링 */}
-            </ul>
-        </div>
+        <Star />
+        <Dropdown />
         </div>
         <div>...</div> {/*성능 추가하기*/}
         <button onClick={handleResult}>추천 받기</button>
@@ -71,3 +64,4 @@ export default function Product() {
 //!! Framer motion 적용
 //!! Header, Footer 수정
 //!! Result page 제작 및 페이지 이동 handle 함수 완성
+//!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성

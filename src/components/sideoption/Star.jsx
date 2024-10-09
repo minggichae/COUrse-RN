@@ -21,9 +21,12 @@ export default function Star() {
         return result; //반복문으로 별 5개 만들고, push로 배열에 추가하기
     }
     return (
+        <>
+        별점
         <div>
             {handleratingsStar()}
         </div>
+        </>
     )
 }
 
