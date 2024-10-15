@@ -50,6 +50,8 @@ export default function Product() {
                     <li></li>
                     <li></li>
                     <li></li>
+                    <li></li>
+                    <li></li>
             </ul>
         <div>
             <input 
@@ -76,9 +78,11 @@ export default function Product() {
     )
 }
 
-//!! CSS 진행 - 별점, 카테고리 박스, 버튼, 드롭다운
 //!! Framer motion 적용
-//!! Header, Footer 수정
 //!! Result page 제작 및 페이지 이동 handle 함수 완성
 //!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
 
+//TODO : dropdown css 처리 
+//TODO : 추천 받기 버튼 css 처리
+//TODO : layout(background) 코드 컴포넌트화
+//TODO : 전체적인 색상 수정

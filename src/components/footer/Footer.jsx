@@ -4,7 +4,7 @@ import "../../App.css"
 export default function Footer() {
     return (
         <footer className="footer">
-            <h2>임시 Footer</h2>
-        </footer>
+            <p className="footer_p">Copyright © 2024 All Rights Reserved by UTF-CKP</p>  
+        </footer>   
     );
 }

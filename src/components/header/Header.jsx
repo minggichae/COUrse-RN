@@ -6,7 +6,7 @@ export default function Header() {
         <header>
             <div>
                 <h1>COUrse</h1>
-                <p>Made UTF-KTP</p>
+                <p>쿠팡 구매 품목 추천 사이트</p>
             </div>
         </header>
     );

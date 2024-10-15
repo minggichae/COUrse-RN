@@ -12,6 +12,8 @@ export default function Layout( {content}) {
                     <li></li>
                     <li></li>
                     <li></li>
+                    <li></li>
+                    <li></li>
             </ul>
             {content}
         </div>

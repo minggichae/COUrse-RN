@@ -167,7 +167,7 @@ p {
 
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-/*background - https://devdevout.com/css/css-animated-backgrounds */
+/*layout - https://devdevout.com/css/css-animated-backgrounds */
 .background{
   background: #216399;  
   background: -webkit-linear-gradient(to left, #8febfb, #4e54c8);  
@@ -179,9 +179,8 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
-  overflow: hidden;
 }
 
 .background__block__event li{
@@ -212,7 +211,7 @@ p {
 }
 
 .background__block__event li:nth-child(3){
-  left: 70%;
+  left: 90%;
   width: 20px;
   height: 20px;
   animation-delay: 4s;
@@ -271,6 +270,22 @@ p {
   animation-duration: 11s;
 }
 
+.background__block__event li:nth-child(11){
+  left: 75%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+.background__block__event li:nth-child(12){
+  left: 55%;
+  width: 130px;
+  height: 130px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
 
 @keyframes animate {
 
@@ -293,8 +308,28 @@ p {
   position: relative;
   width: 100%;
   text-align: center;
-  background-color: aliceblue;
+  background-color:#26272b;
 }
+
+.footer_p {
+  color:gray;
+  font-size: 15px;
+}
+
+.flex__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.about {
+  text-align: left;
+}
+
+.use__stack {
+  text-align: right;
+}
+
 
 /*product*/
 .product {
