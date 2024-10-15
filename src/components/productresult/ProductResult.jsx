@@ -3,6 +3,6 @@ import React from 'react';
 export default function ProductResult() {
     
     return (
-        임시데이터
+        <h2>임시데이터</h2>
     )
 }

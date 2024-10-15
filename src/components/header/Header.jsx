@@ -3,8 +3,11 @@ import "../../App.css"
 
 export default function Header() {
     return (
-        <header className="header">
-            <h2>임시 Header</h2>
+        <header>
+            <div>
+                <h1>COUrse</h1>
+                <p>Made UTF-KTP</p>
+            </div>
         </header>
     );
 }

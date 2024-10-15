@@ -37,18 +37,32 @@ export default function Product() {
     } 
     return (
         <>
-        <div className='Product__default__screen'>
+        <div className='Product__main'>
+        <div class="background" > {/*background css*/}
+            <ul class="background__block__event"> {/*backgroud css*/}
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+        <div>
             <input 
             type="text" 
             placeholder='추천 받고 싶은 상품의 카테고리를 입력해주세요!'
             value={categoryValue}
             onChange={saveCategory}
+            className='Category__container'
             />
         </div>
-        <button onClick={handleScroll}>
+        <button className="Custom-btn Scroll__button" onClick={handleScroll}>
             검색 세부 정보 입력 페이지로 이동하기
         </button>
-
         <div className='Error__container'>{error}</div>
         <div ref={scrollRef}>
         <Star />
@@ -56,7 +70,9 @@ export default function Product() {
         </div>
         <div>...</div> {/*성능 추가하기*/}
         <button onClick={handleResult}>추천 받기</button>
-        </>
+        </div>
+        </div>
+        </>     
     )
 }
 
@@ -65,3 +81,4 @@ export default function Product() {
 //!! Header, Footer 수정
 //!! Result page 제작 및 페이지 이동 handle 함수 완성
 //!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
+
