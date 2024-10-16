@@ -1,4 +1,4 @@
-export default function Layout( {content}) {
+export default function Layout( {children}) {
     return (
         <div class="background" > {/*background css*/}
             <ul class="background__block__event"> {/*backgroud css*/}
@@ -15,11 +15,10 @@ export default function Layout( {content}) {
                     <li></li>
                     <li></li>
             </ul>
-            {content}
+            {children}
         </div>
     )
 }
 
-//?? Product에 있는 background를 컴포넌트화 하고, layout 형태로 감싸고 싶은데
-//?? 안되는 중.. ㅠㅠ 위 코드는 test 로직
- 
+//파라미터는 children으로 받아야함. 
+//react에서 children이라는 파라미터를 props를 받아오는 특정 기능으로 인식하기 때문

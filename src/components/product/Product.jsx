@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import Star from '../sideoption/Star.jsx'
 import Dropdown from '../sideoption/Dropdown.jsx';
+import Layout from "../layout/Layout.jsx";
 
 export default function Product() {
     const [categoryValue, setCategoryValue] = useState("");
@@ -38,21 +39,6 @@ export default function Product() {
     return (
         <>
         <div className='Product__main'>
-        <div class="background" > {/*background css*/}
-            <ul class="background__block__event"> {/*backgroud css*/}
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
         <div>
             <input 
             type="text" 
@@ -71,8 +57,7 @@ export default function Product() {
         <Dropdown />
         </div>
         <div>...</div> {/*성능 추가하기*/}
-        <button onClick={handleResult}>추천 받기</button>
-        </div>
+        <button className="Custom-btn Scroll__button" onClick={handleResult}>추천 받기</button>
         </div>
         </>     
     )
@@ -83,6 +68,4 @@ export default function Product() {
 //!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
 
 //TODO : dropdown css 처리 
-//TODO : 추천 받기 버튼 css 처리
-//TODO : layout(background) 코드 컴포넌트화
 //TODO : 전체적인 색상 수정
