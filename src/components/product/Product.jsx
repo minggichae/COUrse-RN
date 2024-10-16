@@ -64,6 +64,7 @@ export default function Product() {
 }
 
 //!! Framer motion 적용 - 스크롤이 내려감에 따라 기능들이 하나씩 나오게 구조 개편 예정
+//!! 기능들이 나오면서 background color도 변화 주기
 //!! Result page 제작 및 페이지 이동 handle 함수 완성 - 전반적인 페이지 구조에 대한 재회의 요망
 //!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
 
