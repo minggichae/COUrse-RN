@@ -495,4 +495,18 @@ p {
   margin-top: 10px;
 }
 
+/*explanation*/
+
+.Explain__container {
+  padding: 50px;
+}
+
+.Basic__explanation {
+  color: white;
+}
+
+.Usage__explanation {
+  color: black;
+}
+
 
