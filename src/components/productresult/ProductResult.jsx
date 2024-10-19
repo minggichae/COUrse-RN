@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function ProductResult({ categoryValue, result, setResult }) {
+export default function ProductResult({ categoryValue, result }) {
   const [response, setResponse] = useState(""); // 응답한 내용 저장하는 state
 
   // 버튼 클릭시 실행할 함수
@@ -22,6 +22,9 @@ export default function ProductResult({ categoryValue, result, setResult }) {
         body: JSON.stringify({
           model: "gpt-3.5-turbo", // 사용할 AI 모델
           messages: [
+            // 메세지 role과 content를 여러개 작성이 가능함.
+            // 여러개를 작성하여 내가 원하는 형식의 ai로 커스텀 가능
+            // 답변의 개수를 n이라는 파라미터를 사용해 원하는 개수로 조절이 가능
             {
               role: "system", // 메세지 역할 system로 설정
               content: `내가 지금 구매하려는 상품을 추천 받고 싶은데 추천을 해줘. 상세한 내용은 다음과 같아.
@@ -37,6 +40,7 @@ export default function ProductResult({ categoryValue, result, setResult }) {
       // API 요청 후 응답 처리
       const data = await res.json();
       // 내용이 있는 경우 응답 처리 실행
+      // choices 배열안에 답변이 저장되는 방식
       if (data.choices && data.choices.length > 0) {
         setResponse(data.choices[0].message.content);
       }
@@ -54,7 +58,6 @@ export default function ProductResult({ categoryValue, result, setResult }) {
   useEffect(() => {
     if (result) {
       CallGPT();
-      //   setResult(false);
     }
   }, [result, categoryValue]);
 
