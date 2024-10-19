@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
 import Star from "../sideoption/Star.jsx";
 import Dropdown from "../sideoption/Dropdown.jsx";
-import GPT from "../GPT/Gpt.jsx";
+import Layout from "../layout/Layout.jsx";
+import ProductResult from "../productresult/ProductResult.jsx";
 
 export default function Product() {
   const [categoryValue, setCategoryValue] = useState("");
   const [error, setError] = useState("");
   const scrollRef = useRef(null);
+  const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
   {
     /*DOM 요소에 대한 참조 생성*/
   }
@@ -41,35 +43,48 @@ export default function Product() {
 
   const handleResult = () => {
     //결과 화면으로 이동하는 로직 추가
+    setResult(true);
   };
   return (
     <>
-      <div className="Product__default__screen">
-        <input
-          type="text"
-          placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
-          value={categoryValue}
-          onChange={saveCategory}
-        />
+      <div className="Product__main">
+        <div>
+          <input
+            type="text"
+            placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
+            value={categoryValue}
+            onChange={saveCategory}
+            className="Category__container"
+          />
+        </div>
+        <button className="Custom-btn Scroll__button" onClick={handleScroll}>
+          검색 세부 정보 입력 페이지로 이동하기
+        </button>
+        <div className="Error__container">{error}</div>
+        <div ref={scrollRef}>
+          <Star />
+          <Dropdown />
+        </div>
+        <div>...</div> {/*성능 추가하기*/}
+        <button className="Custom-btn Scroll__button" onClick={handleResult}>
+          추천 받기
+        </button>
+        {result && (
+          <ProductResult
+            categoryValue={categoryValue}
+            result={result}
+            setResult={setResult}
+          />
+        )}
       </div>
-      <button onClick={handleScroll}>
-        검색 세부 정보 입력 페이지로 이동하기
-      </button>
-      <div className="Error__container">{error}</div>
-      <div ref={scrollRef}>
-        <Star />
-        <Dropdown />
-      </div>
-      <div>...</div>
-      {/*성능 추가하기*/}
-      <button onClick={handleResult}>추천 받기</button>
-      <GPT categoryValue={categoryValue} />
     </>
   );
 }
 
-//!! CSS 진행 - 별점, 카테고리 박스, 버튼, 드롭다운
-//!! Framer motion 적용
-//!! Header, Footer 수정
-//!! Result page 제작 및 페이지 이동 handle 함수 완성
+//!! Framer motion 적용 - 스크롤이 내려감에 따라 기능들이 하나씩 나오게 구조 개편 예정
+//!! 기능들이 나오면서 background color도 변화 주기
+//!! Result page 제작 및 페이지 이동 handle 함수 완성 - 전반적인 페이지 구조에 대한 재회의 요망
 //!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
+
+//TODO : dropdown css 처리
+//TODO : 전체적인 색상 수정

@@ -22,8 +22,7 @@ export default function Dropdown() {
                 <div onClick={() =>handlePrintcount("40개 추천 받기")}>40개</div>
             </div>} {/* true일 때만 Dropdown 컴포넌트 렌더링 */}
           </div>
-      </div>
-        
+      </div> 
       </>
     );
   }

@@ -22,8 +22,8 @@ export default function Star() {
     }
     return (
         <>
-        별점
-        <div>
+        <div className='Star__rating__container'>
+        <p>별점을 입력해주세요!</p>       
             {handleratingsStar()}
         </div>
         </>
