@@ -172,15 +172,15 @@ p {
   background: #216399;  
   background: -webkit-linear-gradient(to left, #8febfb, #4e54c8);  
   width: 100%;
-  height: 170vh;
+  height: auto;
 }
 
 .background__block__event{
   position: absolute;
   top: 0;
   left: 0;
-  width: 95%;
-  height: 170%;
+  width: 90%;
+  height: 100%;
 }
 
 .background__block__event li{
@@ -191,29 +191,30 @@ p {
   height: 20px;
   background: rgba(255, 255, 255, 0.2);
   animation: animate 25s linear infinite;
-  bottom: -150px;
+  bottom: calc(-75vh);
+  overflow: hidden;
 }
 
 .background__block__event li:nth-child(1){
   left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
+  width: 120px;
+  height: 120px;
+  animation-delay: 5s;
 }
 
 
 .background__block__event li:nth-child(2){
   left: 10%;
-  width: 20px;
-  height: 20px;
+  width: 70px;
+  height: 70px;
   animation-delay: 2s;
-  animation-duration: 3s;
+  animation-duration: 9s;
 }
 
 .background__block__event li:nth-child(3){
   left: 90%;
-  width: 20px;
-  height: 20px;
+  width: 80px;
+  height: 80px;
   animation-delay: 4s;
 }
 
@@ -227,8 +228,8 @@ p {
 
 .background__block__event li:nth-child(5){
   left: 65%;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   animation-delay: 0s;
 }
 
@@ -248,16 +249,16 @@ p {
 
 .background__block__event li:nth-child(8){
   left: 50%;
-  width: 25px;
-  height: 25px;
+  width: 55px;
+  height: 55px;
   animation-delay: 15s;
   animation-duration: 45s;
 }
 
 .background__block__event li:nth-child(9){
   left: 20%;
-  width: 15px;
-  height: 15px;
+  width: 45px;
+  height: 45px;
   animation-delay: 2s;
   animation-duration: 35s;
 }
@@ -296,7 +297,7 @@ p {
   }
 
   100%{
-      transform: translateY(-1000px) rotate(720deg);
+      transform: translateY(-200vh) rotate(720deg);
       opacity: 0;
       border-radius: 50%;
   }

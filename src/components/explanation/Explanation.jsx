@@ -25,7 +25,7 @@ export default function Explanation() {
             <p>카테고리 예시: 
                 <ReactTyped
                     strings={['전자제품', ' 패션', ' 식품', '냉장', '냉동', '생활용품', '스포츠', '뷰티', '유아용품', '도서', 'DVD', '자동차 용품', '건강', '의료용품', '인테리어']}
-                    typeSpeed={50}
+                    typeSpeed={120}
                     backSpeed={50}
                     loop={true}
                 /> 
@@ -34,5 +34,3 @@ export default function Explanation() {
         </> 
     )
 }
-//TODO: 전체 뷰 크기 수정
-//TODO: 설명글 추가 및 css 수정 요망
