@@ -379,6 +379,7 @@ p {
 .Dropdown__container {
   position: relative;
   display: inline-block;
+  padding: 30px;
 }
 
 .Dropdown {
@@ -499,6 +500,9 @@ p {
 
 .Explain__container {
   padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Basic__explanation {
@@ -508,5 +512,6 @@ p {
 .Usage__explanation {
   color: black;
 }
+
 
 

@@ -5,7 +5,7 @@ import '../../App.css';
 
 export default function Star() {
 
-    const [starScore, setStarScore] = useState(0);
+    const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
 
     const handleratingsStar = () => {
         let result = [];
@@ -18,6 +18,7 @@ export default function Star() {
                 }
                 </span>);
         }
+        console.log(starScore);
         return result; //반복문으로 별 5개 만들고, push로 배열에 추가하기
     }
     return (

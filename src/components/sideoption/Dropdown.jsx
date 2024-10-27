@@ -3,9 +3,13 @@ import { useState } from 'react';
 export default function Dropdown() {
     const [view, setView] = useState(false);
     const [recommendItem, setRecommendItem] = useState("추천 품목 개수 선택")
-    const handlePrintcount = (item) => {
+    const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
+
+    const handlePrintcount = (item, num) => {
       setRecommendItem(item);
+      setPrintCount(num); 
       setView(false); 
+      console.log(num);
     }
     
     return (
@@ -16,10 +20,10 @@ export default function Dropdown() {
 	        {view ? ' ▲' : ' ▼'} 
           {view &&          
             <div className="Dropdown__detail">      
-              <div onClick={() => handlePrintcount("10개 추천 받기")}>10개</div>
-                <div onClick={() =>handlePrintcount("20개 추천 받기")}>20개</div>
-                <div onClick={() =>handlePrintcount("30개 추천 받기")}>30개</div>
-                <div onClick={() =>handlePrintcount("40개 추천 받기")}>40개</div>
+              <div onClick={() => handlePrintcount("10개 추천 받기", 10)}>10개</div>
+                <div onClick={() => handlePrintcount("20개 추천 받기", 20)}>20개</div>
+                <div onClick={() => handlePrintcount("30개 추천 받기", 30)}>30개</div>
+                <div onClick={() => handlePrintcount("40개 추천 받기", 40)}>40개</div>
             </div>} {/* true일 때만 Dropdown 컴포넌트 렌더링 */}
           </div>
       </div> 
