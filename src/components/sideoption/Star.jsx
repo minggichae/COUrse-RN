@@ -3,10 +3,7 @@ import { FaRegStar, FaStar} from 'react-icons/fa';
 import '../../App.css';
 
 
-export default function Star() {
-
-    const [starScore, setStarScore] = useState(0);
-
+export default function Star({starScore, setStarScore}) {
     const handleratingsStar = () => {
         let result = [];
         for (let i=0; i<5; i++) {
@@ -18,6 +15,7 @@ export default function Star() {
                 }
                 </span>);
         }
+        console.log(starScore);
         return result; //반복문으로 별 5개 만들고, push로 배열에 추가하기
     }
     return (
