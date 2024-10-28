@@ -17,14 +17,13 @@ export default function Dropdown() {
       <div className='Dropdown__container'>
           <div className="Dropdown" onClick={() => {setView(!view)}}> {/*click시 view 상태 반대로*/}
 	        {recommendItem}
-	        {view ? ' ▲' : ' ▼'} 
-          {view &&          
-            <div className="Dropdown__detail">      
+	        {view ? ' ▲' : ' ▼'}       
+            <div className={`Dropdown__detail ${view ? 'show' : ''}`}>      
               <div onClick={() => handlePrintcount("10개 추천 받기", 10)}>10개</div>
                 <div onClick={() => handlePrintcount("20개 추천 받기", 20)}>20개</div>
                 <div onClick={() => handlePrintcount("30개 추천 받기", 30)}>30개</div>
                 <div onClick={() => handlePrintcount("40개 추천 받기", 40)}>40개</div>
-            </div>} {/* true일 때만 Dropdown 컴포넌트 렌더링 */}
+            </div> {/* true일 때만 Dropdown 컴포넌트 렌더링 */}
           </div>
       </div> 
       </>
