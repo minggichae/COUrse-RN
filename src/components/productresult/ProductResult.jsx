@@ -32,8 +32,7 @@ export default function ProductResult({ categoryValue, result }) {
               role: "system", // 메세지 역할 system로 설정
               content: `당신은 상품을 추천해주는 전문가이다. 상품의 카테고리를 입력받으면 그 카테고리에 알맞는 제품의 상품 정보를 생성하여 출력해라.
               입력받은 카테고리는 ${categoryValue}이고, 상품을 추천할 때 그 상품의 별점도 가져와라. 예를 들면 4.5/5 이런식으로 가져와라.
-              그리고, 카테고리에 관련된 제품만 추천해주고 다른 제품은 추천하지 마라. 예를 들면 채소를 입력하면 상추, 깻잎 이런류만 알려주고 채소 다지는 기계 이런 답변은 하지마라.
-              `,
+              그리고, 카테고리에 관련된 제품만 추천해주고 다른 제품은 추천하지 마라. 예를 들면 채소를 입력하면 상추, 깻잎 이런류만 알려주고 채소 다지는 기계 이런 답변은 하지마라.`,
               // content: `내가 지금 구매하려는 상품을 추천 받고 싶은데 추천을 해줘. 상세한 내용은 다음과 같아.
               // 카테고리는 ${categoryValue}안에서 추천해줘. 내가 정해둔 길이에 짤리지 않게 제품에 대한 설명을 할 때 간략하게 해줘.`, // 사용자가 입력한 메세지
               // 별점은 star인 것을 추천해줘. 그리고, 상품 추천을 할 때는 selcet개수만 띄워줘.
@@ -86,7 +85,7 @@ export default function ProductResult({ categoryValue, result }) {
     if (result) {
       CallGPT();
     }
-  }, [result, categoryValue]);
+  }, [result]);
 
   return (
     <div className="GPT-Response">
@@ -104,6 +103,7 @@ export default function ProductResult({ categoryValue, result }) {
 
 /*
 해야할 것 체크 리스트
+
 0.
 - 프롬프트 엔지니어링 학습
 - 파인튜닝 학습 및 실행
@@ -122,4 +122,10 @@ export default function ProductResult({ categoryValue, result }) {
 6. 더미데이터에 이미지 삽입이 가능한지 체크 -> 불가
 - 파인 튜닝을 할 때 GPT모델은 텍스트 데이터만 처리할 수 있어 이미지와 같은 비텍스트 데이터는 지원을 하지 않음.
 
+대분류 소분류 나눠서 데이터 셋 제작 -> 카테고리 검색 시 유용한 정보
+
+파일 건네주기 -> 막힘
+학습 시간이 걸리든 별다른 문제 -> X
+1차적 이미지 삽입을 해야함. -> 추가 안하고 임의로 테스트로 해서 파인튜닝해서 성공했다 -> 이미지 오류 뜨는 경우 귀찮아지니 미리 데이터 셋을 제대로 만들자.
+카테고리 별로 대량의 데이터가 필요함. (40개는 적다.)
 */
