@@ -7,13 +7,15 @@ export default function Product() {
     const [categoryValue, setCategoryValue] = useState("");
     const [error, setError] = useState("");
     const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
+    const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
+    const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
 
 
     const saveCategory = (e) => { {/*카테고리 value 값 가져오기*/}
         setCategoryValue(e.target.value);
         console.log(e.target.value);
     }
- 
+    
 
     const handleScroll = () => {
         if(categoryValue) {
@@ -53,10 +55,16 @@ export default function Product() {
         </button>
         <div className='Error__container'>{error}</div>
         <div ref={scrollRef}>
-        <Star />
-        <Dropdown />
+        <Star  
+            starScore = {starScore}
+            setStarScore = {setStarScore}
+        />
+        <Dropdown 
+            printCount = {printCount}
+            setPrintCount = {setPrintCount}
+        />
         </div>
-        {/* <div>추가 할 성능 고려하기</div>*/}
+        {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/}
         <button className="Custom-btn Scroll__button" onClick={handleResult}>추천 받기</button>
         </div>
         </>     
@@ -72,3 +80,4 @@ export default function Product() {
 //TODO : 전체 뷰 크기 수정
 //TODO : 설명글 추가 및 css 수정 요망
 //TODO : background animation 끝까지 올라오게 만들기
+//TODO : Star, Dropdown 컴포넌트 변수 props로 product에 전달해주기(민기 AI 브랜치 - product.jsx 참고)

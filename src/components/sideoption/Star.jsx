@@ -3,10 +3,7 @@ import { FaRegStar, FaStar} from 'react-icons/fa';
 import '../../App.css';
 
 
-export default function Star() {
-
-    const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
-
+export default function Star({starScore, setStarScore}) {
     const handleratingsStar = () => {
         let result = [];
         for (let i=0; i<5; i++) {

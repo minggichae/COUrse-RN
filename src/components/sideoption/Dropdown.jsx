@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-export default function Dropdown() {
+export default function Dropdown(setPrintCount) {
     const [view, setView] = useState(false);
     const [recommendItem, setRecommendItem] = useState("추천 품목 개수 선택")
-    const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
+   
 
     const handlePrintcount = (item, num) => {
       setRecommendItem(item);
