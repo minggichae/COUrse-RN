@@ -1,0 +1,28 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "당신은 상품을 추천해주는 전문가이다. 상품의 카테고리를 입력받으면 그 카테고리에 알맞는 제품의 상품 정보를 생성하여 출력해라."
+    },
+    {
+      "role": "user",
+      "content": "노트북"
+    },
+    {
+      "role": "assistant",
+      "content": "1. 제품명: ASUS 비보북 S 15 OLED M5506NA-MA036, 가격: 1,200,000원, 별점: 5/5\n2. 제품명: HP Nero 15-fc0076AU, 가격: 900,000원, 별점: 4.7/5\n3. 제품명: LG전자 2024 그램 프로 16 16Z90SP-GA5CK, 가격: 2,300,000원, 별점: 4.9/5\n4. 제품명: Apple 맥북 프로 14인치 M2, 가격: 2,700,000원, 별점: 5/5\n5. 제품명: Dell XPS 13 9310, 가격: 1,800,000원, 별점: 4.8/5\n6. 제품명: 삼성 갤럭시북 3 프로 360, 가격: 2,000,000원, 별점: 4.7/5\n7. 제품명: Lenovo ThinkPad X1 Carbon Gen 10, 가격: 2,200,000원, 별점: 4.9/5\n8. 제품명: Microsoft Surface Laptop 5, 가격: 1,700,000원, 별점: 4.6/5\n9. 제품명: MSI Stealth 15M A11UEK, 가격: 1,500,000원, 별점: 4.7/5\n10. 제품명: Acer Swift 5 SF514-55TA, 가격: 1,400,000원, 별점: 4.8/5"
+    },
+    {
+      "role": "assistant",
+      "content": "11. 제품명: HP Envy 13 X360, 가격: 1,200,000원, 별점: 4.8/5\n12. 제품명: Dell Inspiron 15 5510, 가격: 1,000,000원, 별점: 4.6/5\n13. 제품명: Lenovo Yoga Slim 7 Carbon, 가격: 1,500,000원, 별점: 4.7/5\n14. 제품명: ASUS ZenBook Duo UX482, 가격: 2,300,000원, 별점: 4.9/5\n15. 제품명: Acer Aspire 5 A515-56, 가격: 800,000원, 별점: 4.5/5\n16. 제품명: Samsung Galaxy Book Flex 2, 가격: 1,900,000원, 별점: 4.6/5\n17. 제품명: Apple MacBook Air M2, 가격: 1,500,000원, 별점: 5/5\n18. 제품명: LG 그램 17Z90P, 가격: 2,100,000원, 별점: 4.8/5\n19. 제품명: MSI GF63 Thin 10SCXR, 가격: 1,000,000원, 별점: 4.5/5\n20. 제품명: Microsoft Surface Book 3, 가격: 2,000,000원, 별점: 4.7/5"
+    },
+    {
+      "role": "assistant",
+      "content": "21. 제품명: HP Spectre x360 14, 가격: 2,000,000원, 별점: 4.9/5\n22. 제품명: Lenovo Legion 5 Pro, 가격: 1,800,000원, 별점: 4.8/5\n23. 제품명: Dell G15 5520, 가격: 1,300,000원, 별점: 4.6/5\n24. 제품명: ASUS TUF Gaming F15, 가격: 1,200,000원, 별점: 4.5/5\n25. 제품명: Acer Nitro 5 AN515-58, 가격: 1,300,000원, 별점: 4.7/5\n26. 제품명: Samsung Galaxy Book Odyssey, 가격: 1,900,000원, 별점: 4.7/5\n27. 제품명: LG 울트라기어 17U70P, 가격: 1,700,000원, 별점: 4.6/5\n28. 제품명: Apple MacBook Pro 13인치 M1, 가격: 1,700,000원, 별점: 5/5\n29. 제품명: Microsoft Surface Pro 8, 가격: 1,800,000원, 별점: 4.8/5\n30. 제품명: ASUS ROG Zephyrus G14, 가격: 1,900,000원, 별점: 4.9/5"
+    },
+    {
+      "role": "assistant",
+      "content": "31. 제품명: Lenovo IdeaPad Flex 5i, 가격: 900,000원, 별점: 4.6/5\n32. 제품명: HP Pavilion 14, 가격: 800,000원, 별점: 4.5/5\n33. 제품명: Dell XPS 15 9500, 가격: 2,500,000원, 별점: 4.9/5\n34. 제품명: Samsung Galaxy Book Ion, 가격: 1,700,000원, 별점: 4.6/5\n35. 제품명: Acer Spin 5 SP513-54N, 가격: 1,200,000원, 별점: 4.8/5\n36. 제품명: ASUS ProArt StudioBook 15, 가격: 2,000,000원, 별점: 4.7/5\n37. 제품명: LG 그램 2-in-1 14T90P, 가격: 2,200,000원, 별점: 4.8/5\n38. 제품명: MSI Prestige 14 Evo, 가격: 1,400,000원, 별점: 4.6/5\n39. 제품명: Apple MacBook Pro 16인치 M1 Pro, 가격: 3,200,000원, 별점: 5/5\n40. 제품명: Microsoft Surface Laptop Go, 가격: 900,000원, 별점: 4.5/5"
+    }
+  ]
+}
