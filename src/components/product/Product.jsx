@@ -1,81 +1,96 @@
-import React, {useState, useRef} from 'react';
-import Star from '../sideoption/Star.jsx'
-import Dropdown from '../sideoption/Dropdown.jsx';
+import React, { useState, useRef } from "react";
+import Star from "../sideoption/Star.jsx";
+import Dropdown from "../sideoption/Dropdown.jsx";
 import Layout from "../layout/Layout.jsx";
+import ProductResult from "../productresult/ProductResult.jsx";
 
 export default function Product() {
-    const [categoryValue, setCategoryValue] = useState("");
-    const [error, setError] = useState("");
-    const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
-    const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
-    const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
+
+  const [categoryValue, setCategoryValue] = useState("");
+  const [error, setError] = useState("");
+  const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
+  const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
+  const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
+  const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
 
 
-    const saveCategory = (e) => { {/*카테고리 value 값 가져오기*/}
-        setCategoryValue(e.target.value);
-        console.log(e.target.value);
-    }
-    
+  const saveCategory = (e) => {
+    setCategoryValue(e.target.value);
+    console.log(e.target.value);
+  };
 
-    const handleScroll = () => {
-        if(categoryValue) {
-        console.log("전달된 카테고리 값:", categoryValue);
-        setError("");
-            if (scrollRef.current) {
-                scrollRef.current.scrollIntoView({ behavior: 'smooth' });
-                {/*
+
+  const handleScroll = () => {
+    if (categoryValue) {
+      console.log("전달된 카테고리 값:", categoryValue);
+      setError("");
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+        {
+          /*
                     .current: DOM 요소의 값을 저장할 수 있는 프로퍼티 
                     scrollIntoView: 해당 요소로 이동, current 프로퍼티에 저장된 DOM 요소의
                     객체값으로 view 이동
-                */}
+                */
         }
-        //데이터 저장 후 세부 정보 기입란으로 스크롤하는 로직 넣기
-        } else {
-            setError("카테고리를 입력해주세요!");
-        }
-    };
+      }
+      //데이터 저장 후 세부 정보 기입란으로 스크롤하는 로직 넣기
+    } else {
+      setError("카테고리를 입력해주세요!");
+    }
+  };
 
-    const handleResult = () => {
-        //결과 화면으로 이동하는 로직 추가
-    } 
-    return (
-        <>
-        <div className='Product__main'>
+  const handleResult = () => {
+    //결과 화면으로 이동하는 로직 추가
+    setResult(true);
+  };
+  return (
+    <>
+      <div className="Product__main">
         <div>
-            <input 
-            type="text" 
-            placeholder='추천 받고 싶은 상품의 카테고리를 입력해주세요!'
+          <input
+            type="text"
+            placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
             value={categoryValue}
             onChange={saveCategory}
-            className='Category__container'
-            />
+            className="Category__container"
+          />
         </div>
         <button className="Custom-btn Scroll__button" onClick={handleScroll}>
-            검색 세부 정보 입력 페이지로 이동하기
+          검색 세부 정보 입력 페이지로 이동하기
         </button>
-        <div className='Error__container'>{error}</div>
+        <div className="Error__container">{error}</div>
         <div ref={scrollRef}>
-        <Star  
+          <Star  
             starScore = {starScore}
             setStarScore = {setStarScore}
-        />
-        <Dropdown 
+          />
+          <Dropdown 
             printCount = {printCount}
             setPrintCount = {setPrintCount}
-        />
+          />
         </div>
-        {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/}
-        <button className="Custom-btn Scroll__button" onClick={handleResult}>추천 받기</button>
-        </div>
-        </>     
-    )
+        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div> 
+        <button className="Custom-btn Scroll__button" onClick={handleResult}>
+          추천 받기
+        </button>
+        {result && (
+          <ProductResult
+            categoryValue={categoryValue}
+            result={result}
+            setResult={setResult}
+          />
+        )}
+      </div>
+    </>
+  ); 
 }
 
 //!! Framer motion 적용 - 스크롤이 내려감에 따라 기능들이 하나씩 나오게 구조 개편 예정
 //!! 기능들이 나오면서 background color도 변화 주기
 //!! Result page 제작 및 페이지 이동 handle 함수 완성 - 전반적인 페이지 구조에 대한 재회의 요망
 
-//TODO : dropdown css 처리 
+//TODO : dropdown css 처리
 //TODO : 전체적인 색상 수정
 //TODO : 전체 뷰 크기 수정
 //TODO : 설명글 추가 및 css 수정 요망
