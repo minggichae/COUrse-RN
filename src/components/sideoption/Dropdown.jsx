@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Dropdown(setPrintCount) {
+export default function Dropdown({setPrintCount}) {
     const [view, setView] = useState(false);
     const [recommendItem, setRecommendItem] = useState("추천 품목 개수 선택")
    
