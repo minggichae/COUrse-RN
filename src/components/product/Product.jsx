@@ -5,20 +5,23 @@ import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 
 export default function Product() {
-
   const [categoryValue, setCategoryValue] = useState("");
   const [error, setError] = useState("");
-  const scrollRef = useRef(null); {/*DOM 요소에 대한 참조 생성*/}
+  const scrollRef = useRef(null);
+  {
+    /*DOM 요소에 대한 참조 생성*/
+  }
   const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
   const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
   const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
 
-
   const saveCategory = (e) => {
+    {
+      /*카테고리 value 값 가져오기*/
+    }
     setCategoryValue(e.target.value);
     console.log(e.target.value);
   };
-
 
   const handleScroll = () => {
     if (categoryValue) {
@@ -61,16 +64,10 @@ export default function Product() {
         </button>
         <div className="Error__container">{error}</div>
         <div ref={scrollRef}>
-          <Star  
-            starScore = {starScore}
-            setStarScore = {setStarScore}
-          />
-          <Dropdown 
-            printCount = {printCount}
-            setPrintCount = {setPrintCount}
-          />
+          <Star starScore={starScore} setStarScore={setStarScore} />
+          <Dropdown printCount={printCount} setPrintCount={setPrintCount} />
         </div>
-        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div> 
+        <div>...</div> {/*성능 추가하기*/}
         <button className="Custom-btn Scroll__button" onClick={handleResult}>
           추천 받기
         </button>
@@ -78,21 +75,19 @@ export default function Product() {
           <ProductResult
             categoryValue={categoryValue}
             result={result}
-            setResult={setResult}
+            starScore={starScore}
+            printCount={printCount}
           />
         )}
       </div>
     </>
-  ); 
+  );
 }
 
 //!! Framer motion 적용 - 스크롤이 내려감에 따라 기능들이 하나씩 나오게 구조 개편 예정
 //!! 기능들이 나오면서 background color도 변화 주기
 //!! Result page 제작 및 페이지 이동 handle 함수 완성 - 전반적인 페이지 구조에 대한 재회의 요망
+//!! 버튼 입력 시 저장된 변수 데이터를 받아줄 변수 생성
 
 //TODO : dropdown css 처리
 //TODO : 전체적인 색상 수정
-//TODO : 전체 뷰 크기 수정
-//TODO : 설명글 추가 및 css 수정 요망
-//TODO : background animation 끝까지 올라오게 만들기
-//TODO : Star, Dropdown 컴포넌트 변수 props로 product에 전달해주기(민기 AI 브랜치 - product.jsx 참고)
