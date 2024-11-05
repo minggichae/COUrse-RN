@@ -28,7 +28,7 @@ export default function ProductResult({
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "ft:gpt-4o-mini-2024-07-18:personal::AOks3LHb", // 사용할 AI 모델
+          model: "ft:gpt-4o-mini-2024-07-18:personal::AQDLvkFG", // 사용할 AI 모델
           messages: [
             // 메세지 role과 content를 여러개 작성이 가능함.
             // 여러개를 작성하여 내가 원하는 형식의 ai로 커스텀 가능
@@ -37,7 +37,7 @@ export default function ProductResult({
               role: "system", // 메세지 역할 system로 설정
               content: `당신은 상품을 추천해주는 전문가이다. 상품의 카테고리를 입력받으면 그 카테고리에 알맞는 제품의 상품 정보를 생성하여 출력해라.
               입력받은 카테고리는 ${categoryValue}이고, 별점은 ${starScore}점 이상, 제품 추천 수는 ${printCount}개로 고정해라.
-              별점을 가져와서 나타낼땐 4.5/5 이런식으로 나타내라.
+              별점을 가져와서 나타낼땐 4/5 이런식으로 나타내라.
               그리고, 카테고리에 관련된 제품만 추천해주고 다른 제품은 추천하지 마라. 예를 들면 채소를 입력하면 상추, 깻잎 이런류만 알려주고 채소 다지는 기계 이런 답변은 하지마라.`,
             },
             {
