@@ -1,7 +1,19 @@
-import React from 'react';
-import { ReactTyped,Typed } from "react-typed";
+import React, {useRef} from 'react';
 
-export default function Explanation() {
+export default function Explanation( {scrollRef} ) {
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: "smooth" });
+            {
+              /*
+                        .current: DOM 요소의 값을 저장할 수 있는 프로퍼티 
+                        scrollIntoView: 해당 요소로 이동, current 프로퍼티에 저장된 DOM 요소의
+                        객체값으로 view 이동
+                    */
+            }
+    }
+}
     return (
         <>
         <div className="Explain__container">
@@ -22,15 +34,10 @@ export default function Explanation() {
         </div> 
 
         <div className="Explain__container">
-            <p>카테고리 예시: 
-                <ReactTyped
-                    strings={['전자제품', ' 패션', ' 식품', '냉장', '냉동', '생활용품', '스포츠', '뷰티', '유아용품', '도서', 'DVD', '자동차 용품', '건강', '의료용품', '인테리어']}
-                    typeSpeed={120}
-                    backSpeed={50}
-                    loop={true}
-                /> 
-            </p> 
-        </div>    
+        <button className="Custom-btn Scroll__button" onClick={handleScroll}>
+          정보 기입 하러 가기!
+        </button>   
+        </div> 
         </> 
     )
-}
+  }

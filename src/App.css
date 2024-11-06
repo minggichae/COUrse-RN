@@ -433,7 +433,7 @@ p {
 .Dropdown__container {
   position: relative;
   display: inline-block;
-  padding: 30px;
+  padding: 10px;
 }
 
 .Dropdown {
@@ -551,7 +551,7 @@ p {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-size: 17px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 /*explanation*/
