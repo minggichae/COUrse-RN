@@ -80,22 +80,22 @@ export default function ProductResult({
   }, [result]);
 
   return (
-    <div className="GPT-Response-List">
-      <h2 className="Product-List-Header">추천 상품 목록</h2>
-
-      {loading ? (
-        <p>상품 추천 중...</p>
-      ) : (
-        <div className="Product-Result-Container">
-          {response &&
-            response.split("\n").map((product, index) => {
-              console.log(`${index}번:`, product);
-              return (
-                <div className="Product-Result" key={index}>
-                  <p>{product}</p>
-                </div>
-              );
-              /*
+    <>
+      <div className="Response__container">
+        <h2>추천 상품 목록</h2>
+        {loading ? (
+          <p>상품 추천 중...</p>
+        ) : (
+          <div className="Product__Result__Container">
+            {response &&
+              response.split("\n").map((product, index) => {
+                console.log(`${index}번:`, product);
+                return (
+                  <div className="Product__Result" key={index}>
+                    <p>{product}</p>
+                  </div>
+                );
+                /*
         response를 불러와서 결과값을 가져옴.
         .split("\n")을 통해 줄바꿈으로 배열을 나눔. => 여기서 split은 문자열을 나눌 때 사용되는 JavaScript의 문자열 메서드이다.
         그래서 문자열을 특정 구분으로 기준을 나누어 배열로 변환한다.
@@ -107,10 +107,11 @@ export default function ProductResult({
         Container는 상품 목록의 전체 영역 div
         Result는 상품 하나의 영역 div
         */
-            })}
-        </div>
-      )}
-    </div>
+              })}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

@@ -5,9 +5,7 @@ import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
 
-
-export default function Product( {scrollRef} ) {
-
+export default function Product({ scrollRef }) {
   const [categoryValue, setCategoryValue] = useState("");
   const [categoryError, setCategoryError] = useState("");
   const [starScoreError, setStarScoreError] = useState("");
@@ -20,7 +18,6 @@ export default function Product( {scrollRef} ) {
     setCategoryValue(e.target.value);
     console.log(e.target.value);
   };
-
 
   const handleResult = () => {
     if (categoryValue) {
@@ -43,56 +40,70 @@ export default function Product( {scrollRef} ) {
     } else {
       setPrintCountError("출력 개수를 입력해주세요!");
     }
-    
-    if(categoryValue && starScore && printCount) {
+
+    if (categoryValue && starScore && printCount) {
       setResult(true);
     }
   };
   return (
     <>
       <div ref={scrollRef}>
-      <div className="Product__main">
-      <p>카테고리 예시: 
+        <div className="Product__main">
+          <p>
+            카테고리 예시:
             <ReactTyped
-                strings={['전자제품', ' 패션', ' 식품', '냉장', '냉동', '생활용품', '스포츠', '뷰티', '유아용품', '도서', 'DVD', '자동차 용품', '건강', '의료용품', '인테리어']}
-                typeSpeed={120}
-                backSpeed={50}
-                loop={true}
-            /> 
-      </p> 
-        <div>
-          <input
-            type="text"
-            placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
-            value={categoryValue}
-            onChange={saveCategory}
-            className="Category__container"
-          />
+              strings={[
+                "전자제품",
+                " 패션",
+                " 식품",
+                "냉장",
+                "냉동",
+                "생활용품",
+                "스포츠",
+                "뷰티",
+                "유아용품",
+                "도서",
+                "DVD",
+                "자동차 용품",
+                "건강",
+                "의료용품",
+                "인테리어",
+              ]}
+              typeSpeed={120}
+              backSpeed={50}
+              loop={true}
+            />
+          </p>
+          <div>
+            <input
+              type="text"
+              placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
+              value={categoryValue}
+              onChange={saveCategory}
+              className="Category__container"
+            />
+          </div>
+          <div className="Error__container">{categoryError}</div>
+          <Star starScore={starScore} setStarScore={setStarScore} />
+          <div className="Error__container">{starScoreError}</div>
+          <Dropdown printCount={printCount} setPrintCount={setPrintCount} />
+          <div className="Error__container">{printCountError}</div>
+          <div>
+            {" "}
+            {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/}{" "}
+          </div>
+          <button className="Custom-btn Scroll__button" onClick={handleResult}>
+            추천 받기
+          </button>
+          {result && (
+            <ProductResult
+              categoryValue={categoryValue}
+              result={result}
+              starScore={starScore}
+              printCount={printCount}
+            />
+          )}
         </div>
-        <div className="Error__container">{categoryError}</div>
-          <Star  
-            starScore = {starScore}
-            setStarScore = {setStarScore}
-          />
-        <div className="Error__container">{starScoreError}</div>
-          <Dropdown 
-            printCount = {printCount}
-            setPrintCount = {setPrintCount}
-          />
-        <div className="Error__container">{printCountError}</div>    
-        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div> 
-        <button className="Custom-btn Scroll__button" onClick={handleResult}>
-          추천 받기
-        </button> 
-        {result && (
-          <ProductResult
-            categoryValue={categoryValue}
-            result={result}
-            starScore={starScore}
-            printCount={printCount}
-          />
-        )}
-      </div>
       </div>
     </>
   );
