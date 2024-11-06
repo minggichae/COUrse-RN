@@ -5,6 +5,7 @@ import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
 
+
 export default function Product( {scrollRef} ) {
 
   const [categoryValue, setCategoryValue] = useState("");
@@ -15,11 +16,11 @@ export default function Product( {scrollRef} ) {
   const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
   const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
 
-
   const saveCategory = (e) => {
     setCategoryValue(e.target.value);
     console.log(e.target.value);
   };
+
 
   const handleResult = () => {
     if (categoryValue) {
@@ -87,14 +88,12 @@ export default function Product( {scrollRef} ) {
           <ProductResult
             categoryValue={categoryValue}
             result={result}
-            setResult={setResult}
+            starScore={starScore}
+            printCount={printCount}
           />
         )}
       </div>
       </div>
     </>
-  ); 
+  );
 }
-
-//TODO : 설명글 추가 및 css 수정 요망
-//TODO : background animation 끝까지 올라오게 만들기
