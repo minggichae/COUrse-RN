@@ -80,18 +80,18 @@ export default function ProductResult({
   }, [result]);
 
   return (
-    <div className="GPT-Response-List">
-      <h2 className="Product-List-Header">추천 상품 목록</h2>
-
+    <>  
+    <div className="Response__container">
+      <h2>추천 상품 목록</h2>
       {loading ? (
         <p>상품 추천 중...</p>
       ) : (
-        <div className="Product-Result-Container">
+        <div className="Product__Result__Container">
           {response &&
             response.split("\n").map((product, index) => {
               console.log(`${index}번:`, product);
               return (
-                <div className="Product-Result" key={index}>
+                <div className="Product__Result" key={index}>
                   <p>{product}</p>
                 </div>
               );
@@ -110,16 +110,6 @@ export default function ProductResult({
             })}
         </div>
       )}
-    </div>
-    <div className="test">
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-      <h1>헬로우</h1>
     </div>
     </>
   );
