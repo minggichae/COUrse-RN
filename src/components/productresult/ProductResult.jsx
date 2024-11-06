@@ -28,11 +28,9 @@ export default function ProductResult({
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "ft:gpt-4o-mini-2024-07-18:personal::AQDLvkFG", // 사용할 AI 모델
+          model: "ft:gpt-4o-mini-2024-07-18:personal::AQZFej9V", // 사용할 AI 모델
           messages: [
             // 메세지 role과 content를 여러개 작성이 가능함.
-            // 여러개를 작성하여 내가 원하는 형식의 ai로 커스텀 가능
-            // 답변의 개수를 n이라는 파라미터를 사용해 원하는 개수로 조절이 가능
             {
               role: "system", // 메세지 역할 system로 설정
               content: `당신은 상품을 추천해주는 전문가이다. 상품의 카테고리를 입력받으면 그 카테고리에 알맞는 제품의 상품 정보를 생성하여 출력해라.
@@ -46,7 +44,7 @@ export default function ProductResult({
             },
             {
               role: "assistant",
-              content: `제품명, 가격, 별점 이 세가지 외의 답변은 하지마. 가격은 한국 환율을 기준으로 잡아줘.`,
+              content: `제품명, 가격, 별점 이 세가지 외의 답변은 하지마. 가격은 한국 환율을 기준으로 잡아줘. 제품의 추천 개수는 ${printCount}를 절대 넘어가서는 안돼.`,
             },
           ],
           temperature: 0, // 모델의 출력 다양성
@@ -90,23 +88,36 @@ export default function ProductResult({
             {response &&
               response.split("\n").map((product, index) => {
                 console.log(`${index}번:`, product);
+                const [name, price, rating] = product.split(", ");
+                /*
+                name, price, rating에 각 제품명, 가격, 별점이 들어감 
+                product.split(", ")을 통해 데이터를 가져와서 product 변수에 넣은 문장을 ","으로 구분후 저장
+                e.g. "제품명: 감", "가격: 3,500원", "별점: 5"를 ,을 기준으로 나눈 다음
+                name = 제품명: 감, price = 가격: 3,500원, rating = 별점: 5를 저장
+                */
+                console.log(name);
+                console.log(price);
+                console.log(rating);
+                console.log(printCount);
                 return (
                   <div className="Product__Result" key={index}>
-                    <p>{product}</p>
+                    <p>{name}</p>
+                    <p>{price}</p>
+                    <p>{rating}</p>
                   </div>
                 );
                 /*
-        response를 불러와서 결과값을 가져옴.
-        .split("\n")을 통해 줄바꿈으로 배열을 나눔. => 여기서 split은 문자열을 나눌 때 사용되는 JavaScript의 문자열 메서드이다.
-        그래서 문자열을 특정 구분으로 기준을 나누어 배열로 변환한다.
-        지금과 같은 경우는 \n을 기준으로 문자열을 나눈다는 뜻이다.
-        map 형식을 사용하여 product는 배열의 각 요소(상품 정보), index는 순서(유일한 식별 key)를 저장 후 출력
-        e.g. index = 0, product = 첫번째 배열의 상품 내용
+                response를 불러와서 결과값을 가져옴.
+                .split("\n")을 통해 줄바꿈으로 배열을 나눔. => 여기서 split은 문자열을 나눌 때 사용되는 JavaScript의 문자열 메서드이다.
+                그래서 문자열을 특정 구분으로 기준을 나누어 배열로 변환한다.
+                지금과 같은 경우는 \n을 기준으로 문자열을 나눈다는 뜻이다.
+                map 형식을 사용하여 product는 배열의 각 요소(상품 정보), index는 순서(유일한 식별 key)를 저장 후 출력
+                e.g. index = 0, product = 첫번째 배열의 상품 내용
 
-        css 작업을 할 때 
-        Container는 상품 목록의 전체 영역 div
-        Result는 상품 하나의 영역 div
-        */
+                css 작업을 할 때 
+                Container는 상품 목록의 전체 영역 div
+                Result는 상품 하나의 영역 div
+                */
               })}
           </div>
         )}
@@ -114,27 +125,3 @@ export default function ProductResult({
     </>
   );
 }
-
-/* 
-체크 리스트
-
-1. 대분류 -> 소분류 카테고리 만들기
-2. 더미데이터 대량 제작
-3. 이미지 api 테스트(부적절할 시 파일로 대체 -> Node 서버가 필요하며, 이미지 파일을 가져올 때 저작권도 알아봐야함.)
-4. 재추천 기능 추가(단, 중복 제거도 필요)
-
-jsonl 파일에 주석이 들어가면 학습을 못하는 오류로 인해 밑에다가 메모를 진행함.
-대분류에 따른 소분류 내용 정리
-
-앞에 적는 것은 대분류, -> 표시를 한 후 적는 것은 소분류
-(소분류에는 쿠팡 기준으로 작성을 하였으며, 더 많은 종류가 있지만 일부 축약을 한 뒤 적은 상태이다.)
-
-패션의류/잡화 -> 여성, 남성 (gpt가 종류를 추천해줄 때 여성과 남성의 차이점은 있으나 공용의 경우 차이점이 없어 제거) - 완료
-뷰티 -> 스킨케어/클렌징/필링, 메이크업/향수/네일 - 완료
-식품 -> 과일, 채소, 냉장, 냉동, 축산/계란 수산물/건어물, 음료 - 완료
-주방용품 -> 주방가전/주방조리도구, 그릇/수저/컵/텀블러 - 완료
-생활용품 -> 헤어/바디/세안/구강/면도, 청소/주방/세탁세제/욕실용품, 탈취/방향/살충/건강/의료용품 - 완료
-가전디지털 -> TV/냉장고, 세탁기/건조기/청소기/관리기, 데스크탑/노트북, 테블릿 PC/휴대폰 - 데스크탑/노트북, 테블릿pc, 휴대폰 남음
-스포츠/레저 -> 캠핑, 수영/수상, 골프, 자전거, 등산/아웃도어, 낚시, 헬스
-도서/음반/DVD -> 유아/어린이, 소설/에세이/시, 과학/공학, 국어/외국어/사전, 역사, 예술
-*/
