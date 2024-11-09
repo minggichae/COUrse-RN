@@ -98,7 +98,6 @@ export default function ProductResult({
                 console.log(name);
                 console.log(price);
                 console.log(rating);
-                console.log(printCount);
                 return (
                   <div className="Product__Result" key={index}>
                     <p>{name}</p>
