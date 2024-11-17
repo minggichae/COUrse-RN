@@ -14,7 +14,8 @@ export default function Dropdown({setPrintCount}) {
     
     return (
       <>
-      <div className='Dropdown__container'>
+      <p>추천 품목 개수를 선택해주세요!</p>
+      <div className='Dropdown__container'>     
           <div className="Dropdown" onClick={() => {setView(!view)}}> {/*click시 view 상태 반대로*/}
 	        {recommendItem}
 	        {view ? ' ▲' : ' ▼'}       

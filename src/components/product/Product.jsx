@@ -4,8 +4,9 @@ import Dropdown from "../sideoption/Dropdown.jsx";
 import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
+import { motion, useAnimation } from 'framer-motion';
 
-export default function Product( {scrollRef} ) {
+export default function Product( {scrollRef, showInfo} ) {
 
   const [categoryValue, setCategoryValue] = useState("");
   const [categoryError, setCategoryError] = useState("");
@@ -37,10 +38,10 @@ export default function Product( {scrollRef} ) {
     }
 
     if (printCount) {
-      console.log("출력 개수:", printCount);
+      console.log("추천 품목 개수:", printCount);
       setPrintCountError("");
     } else {
-      setPrintCountError("출력 개수를 입력해주세요!");
+      setPrintCountError("추천 품목 개수를 선택해주세요!");
     }
     
     if(categoryValue && starScore && printCount) {
@@ -49,35 +50,48 @@ export default function Product( {scrollRef} ) {
   };
   return (
     <>
+    {showInfo && (
       <div ref={scrollRef}>
       <div className="Product__main">
-      <p>카테고리 예시: 
-            <ReactTyped
-                strings={['전자제품', ' 패션', ' 식품', '냉장', '냉동', '생활용품', '스포츠', '뷰티', '유아용품', '도서', 'DVD', '자동차 용품', '건강', '의료용품', '인테리어']}
-                typeSpeed={120}
-                backSpeed={50}
-                loop={true}
-            /> 
-      </p> 
         <div>
+          <motion.div
+            initial={{opacity:0, y:50}}
+            animate={{opacity:1, y:0}}
+            transition={{duration:3}}
+          >
+          <p>추천 받고 싶은 제품의 카테고리를 입력해주세요!</p> 
           <input
             type="text"
-            placeholder="추천 받고 싶은 상품의 카테고리를 입력해주세요!"
+            placeholder="카테고리 입력란"
             value={categoryValue}
             onChange={saveCategory}
             className="Category__container"
           />
+          </motion.div>
         </div>
         <div className="Error__container">{categoryError}</div>
+          <motion.div
+            initial={{opacity:0, y:50}}
+            animate={{opacity:1, y:0}}
+            transition={{duration:5}}
+          >
           <Star  
             starScore = {starScore}
             setStarScore = {setStarScore}
           />
+        </motion.div>
         <div className="Error__container">{starScoreError}</div>
+          <motion.div
+            initial={{opacity:0, y:50}}
+            animate={{opacity:1, y:0}}
+            transition={{duration:8}}
+            style={{position: 'relative', zIndex: 5}}
+          >
           <Dropdown 
             printCount = {printCount}
             setPrintCount = {setPrintCount}
           />
+          </motion.div>
         <div className="Error__container">{printCountError}</div>    
         <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div> 
         <button className="Custom-btn Scroll__button" onClick={handleResult}>
@@ -93,6 +107,30 @@ export default function Product( {scrollRef} ) {
         )}
       </div>
       </div>
+    )}   
     </>
   ); 
 }
+
+//TODO Front
+//todo: 스크롤 아래로 내리면 위에 있는 explanation 없어지게 하기. result 보였을때도 마찬가지임
+//todo: 오른쪽 상단 버튼 누르면 사이드바 or 드롭다운으로 카테고리 정보 나와야함
+//todo: 전체 색깔 처리 바꿔야 함(background, header, p, star__rating, dropdown__container)
+//todo: product result css(card, background) 
+
+//TODO back
+//todo: 데이터 서버로 넣기(Node로 서버 생성, DB 테이블 생성)
+//todo: request, response 코드 작성(프론트한테 데이터 넘겨줘야 함)
+
+//TODO AI
+//todo: ??
+
+//TODO 서류 
+//todo: 캡스톤 디자인 대회 신청할건지?
+//todo: 논문 초안 작성
+//todo: 발표 준비 및 PPT 완성(FRONT, BACK, AI 알고리즘 정리 필요)
+//todo: 논문 피드백
+
+//TODO Feedback
+//todo: UI/UX 검토
+//todo: 기능 테스트 및 수정 or 개선
