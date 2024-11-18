@@ -64,3 +64,4 @@ export default function Explanation( {scrollRef, setShowInfo, showInfo} ) {
         </> 
     )
   }
+

@@ -630,7 +630,8 @@ p {
   background-color: rgb(107, 46, 46);
 }
 
-.Product__Result { /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
+.Product__Result {
+  /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
   box-sizing: border-box;
   width: 190px;
   height: 254px;
@@ -657,7 +658,7 @@ p {
 }
 
 .Product__Result:active {
-  transform: scale(0.95) rotateZ(1.7deg); 
+  transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .Product__Result__Container {
