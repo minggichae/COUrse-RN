@@ -6,6 +6,7 @@ import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
 import { motion, useAnimation } from 'framer-motion';
 
+
 export default function Product( {scrollRef, showInfo} ) {
 
   const [categoryValue, setCategoryValue] = useState("");
@@ -15,7 +16,6 @@ export default function Product( {scrollRef, showInfo} ) {
   const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
   const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
   const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
-
 
   const saveCategory = (e) => {
     setCategoryValue(e.target.value);
@@ -43,8 +43,8 @@ export default function Product( {scrollRef, showInfo} ) {
     } else {
       setPrintCountError("추천 품목 개수를 선택해주세요!");
     }
-    
-    if(categoryValue && starScore && printCount) {
+
+    if (categoryValue && starScore && printCount) {
       setResult(true);
     }
   };
@@ -52,6 +52,7 @@ export default function Product( {scrollRef, showInfo} ) {
     <>
     {showInfo && (
       <div ref={scrollRef}>
+
       <div className="Product__main">
         <div>
           <motion.div
@@ -109,7 +110,7 @@ export default function Product( {scrollRef, showInfo} ) {
       </div>
     )}   
     </>
-  ); 
+  );
 }
 
 //TODO Front
