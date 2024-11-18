@@ -105,6 +105,11 @@ export default function ProductResult({
                         onError={ErrorImageHandler}
                         width={50}
                         height={50}
+                        /*
+                        - Json 카테고리 2개정도 쿠팡에 맞게끔 수정
+                        - JSON에 링크를 넣고 학습 시켰을 때 내가 준 링크를 제대로 출력하는지
+                        - 링크 변수에 넣어서 사용(이미지에서 사용한 것 처럼 객체 형식)
+                        */
                       />
                       <p>제품명: {product.productname}</p>
                       <p>가격: {product.price.toLocaleString()}원</p>
