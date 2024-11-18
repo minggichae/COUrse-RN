@@ -1,9 +1,9 @@
 /*header - https://wpdean.com/css-header/ */
 :root {
-  --bg: #0e4592;
-  --c1: #457b9d;
-  --c2: #fff;
-  --c3: #a8dadc;
+  --bg: #f5f5dc;
+  --c1: #642b2b;
+  --c2: #000000;
+  --c3: #0585b8;
 
   /*   
   --bg: #112;
@@ -22,6 +22,49 @@ header {
   align-items: center;
   position: relative;
   background-color: var(--bg);
+}
+
+.Header__text__container {
+  display: flex;
+}
+
+.Header__COU {
+  color: rgb(78, 0, 0);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.Header__r {
+  color: rgb(255, 38, 0);
+  font-family: Arial, sans-serif;
+  font-weight: bold; 
+}
+
+.Header__s {
+  color: rgb(212, 212, 5);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.Header__e {
+  color: rgb(0, 128, 0);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.Header__button {
+  color: black;
+  z-index: 5;
+  position:absolute;
+  right: 10px; /* 부모 요소의 오른쪽 끝에서 10px 떨어지도록 설정 */
+  display: grid;
+  justify-items: center;
+  padding: 30px;
+ 
+}
+
+.Hamburger {
+  margin-bottom: 15px;
 }
 
 @keyframes showBars {
@@ -118,6 +161,7 @@ p {
   margin: 0;
   font-size: 5vw;
   margin-bottom: 5vh;
+  font-weight: bold;
 }
 
 @media all and (min-width: 768px) {
@@ -233,14 +277,23 @@ p {
   text-align: center;
   min-height: 100vh;
   height: auto;
+  padding-top: 70px;
+}
+
+.Product__main p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: white;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
 /*layout - https://devdevout.com/css/css-animated-backgrounds */
 .background {
-  background: #216399;
+  background: #7eaed6;
   background: -webkit-linear-gradient(to left, #8febfb, #4e54c8);
+  min-height: 100vh;
   width: 100%;
   height: auto;
 }
@@ -250,7 +303,8 @@ p {
   top: 0;
   left: 0;
   width: 90%;
-  height: 100%;
+  height: 90%;
+  overflow: hidden;
 }
 
 .background__block__event li {
@@ -261,8 +315,7 @@ p {
   height: 20px;
   background: rgba(255, 255, 255, 0.2);
   animation: animate 25s linear infinite;
-  bottom: calc(-75vh);
-  overflow: hidden;
+  bottom: calc(-50vh);
 }
 
 .background__block__event li:nth-child(1) {
@@ -419,8 +472,6 @@ p {
 
 .Star__rating__container {
   position: relative;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 .Star__rating__container p {
@@ -433,7 +484,7 @@ p {
 .Dropdown__container {
   position: relative;
   display: inline-block;
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .Dropdown {
@@ -539,28 +590,28 @@ p {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 100px;
   z-index: 1;
   position: relative;
 }
 
 /*Error*/
 .Error__container {
-  color: rgba(126, 5, 5, 0.842);
+  color: rgba(168, 4, 4, 0.842);
   font-family: "Lato", sans-serif;
   font-weight: 500;
   font-size: 17px;
-  margin: 10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 /*explanation*/
 
 .Explain__container {
-  padding: 50px;
-  display: flex;
+  padding: 40px;
+  display: grid;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
 .Basic__explanation {
@@ -569,6 +620,8 @@ p {
 
 .Usage__explanation {
   color: black;
+  font-weight: normal;
+  padding: 20px;
 }
 
 /*result*/
