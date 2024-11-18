@@ -4,6 +4,9 @@
   --c1: #642b2b;
   --c2: #000000;
   --c3: #0585b8;
+  --cr: rgb(255, 38, 0);
+  --cs: rgb(212, 212, 5);
+  --ce: rgb(0, 128, 0);
 
   /*   
   --bg: #112;
@@ -35,19 +38,19 @@ header {
 }
 
 .Header__r {
-  color: rgb(255, 38, 0);
+  color: var(--cr);
   font-family: Arial, sans-serif;
   font-weight: bold; 
 }
 
 .Header__s {
-  color: rgb(212, 212, 5);
+  color: var(--cs);
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
 .Header__e {
-  color: rgb(0, 128, 0);
+  color: var(--ce);
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
@@ -116,9 +119,9 @@ header::after {
   background-repeat: no-repeat;
   background-size: 70% 7%;
   background-image: linear-gradient(var(--c1), var(--c1)),
-    linear-gradient(var(--c2), var(--c2)), linear-gradient(var(--c1), var(--c1)),
-    linear-gradient(var(--c2), var(--c2)), linear-gradient(var(--c1), var(--c1)),
-    linear-gradient(var(--c2), var(--c2)), linear-gradient(var(--c1), var(--c1));
+    linear-gradient(var(--cr), var(--cr)), linear-gradient(var(--c1), var(--c1)),
+    linear-gradient(var(--cs), var(--cs)), linear-gradient(var(--c1), var(--c1)),
+    linear-gradient(var(--ce), var(--ce)), linear-gradient(var(--c1), var(--c1));
   background-position: 0% 7%, 100% 21%, 0% 35%, 100% 49%, 0% 63%, 100% 77%,
     0% 91%;
   animation: showBars 3.5s;
