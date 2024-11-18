@@ -37,7 +37,7 @@ header {
 .Header__r {
   color: rgb(255, 38, 0);
   font-family: Arial, sans-serif;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .Header__s {
@@ -55,12 +55,11 @@ header {
 .Header__button {
   color: black;
   z-index: 5;
-  position:absolute;
+  position: absolute;
   right: 10px; /* 부모 요소의 오른쪽 끝에서 10px 떨어지도록 설정 */
   display: grid;
   justify-items: center;
   padding: 30px;
- 
 }
 
 .Hamburger {
@@ -630,7 +629,8 @@ p {
   background-color: rgb(107, 46, 46);
 }
 
-.Product__Result { /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
+.Product__Result {
+  /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
   box-sizing: border-box;
   width: 190px;
   height: 254px;
@@ -657,7 +657,7 @@ p {
 }
 
 .Product__Result:active {
-  transform: scale(0.95) rotateZ(1.7deg); 
+  transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .Product__Result__Container {
