@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ProductUrls from "./ProductUrls";
 
 export default function ProductResult({
   categoryValue,
@@ -32,7 +33,7 @@ export default function ProductResult({
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "ft:gpt-4o-mini-2024-07-18:personal::AU8Bo8ua", // 사용할 AI 모델
+          model: "ft:gpt-4o-mini-2024-07-18:personal::AVHfb3tT", // 사용할 AI 모델
           messages: [
             // 메세지 role과 content를 여러개 작성이 가능함.
             {
@@ -97,25 +98,40 @@ export default function ProductResult({
                   console.log(products);
 
                   // 파싱된 데이터가 배열 형태일 경우 처리
-                  return products.map((product, index) => (
-                    <div className="Product__Result" key={index}>
-                      <img
-                        src={`/image/${categoryValue}/${product.productname}.jpg`}
-                        alt={product.productname}
-                        onError={ErrorImageHandler}
-                        width={50}
-                        height={50}
-                        /*
-                        - Json 카테고리 2개정도 쿠팡에 맞게끔 수정
-                        - JSON에 링크를 넣고 학습 시켰을 때 내가 준 링크를 제대로 출력하는지
-                        - 링크 변수에 넣어서 사용(이미지에서 사용한 것 처럼 객체 형식)
-                        */
-                      />
-                      <p>제품명: {product.productname}</p>
-                      <p>가격: {product.price.toLocaleString()}원</p>
-                      <p>별점: {product.starrating}/5</p>
-                    </div>
-                  ));
+                  return products.map((product, index) => {
+                    // ProductUrls.js에서 제품명에 해당되는 변수 가져오기
+                    const productUrl = ProductUrls[product.productname];
+                    console.log(productUrl);
+
+                    // div 영역 클릭 시 호출되는 함수(링크 바로가기)
+                    const OpenUrl = () => {
+                      if (productUrl) {
+                        // productUrl이 있는 경우 링크 바로가기
+                        window.open(`https://url.kr/${productUrl}`);
+                      } else {
+                        // productUrl이 없는 경우 에러 처리
+                        alert("쿠팡 api 사용시 작동합니다.");
+                      }
+                    };
+                    return (
+                      <div
+                        className="Product__Result"
+                        key={index}
+                        onClick={OpenUrl} // div 영역 클릭시 링크 바로가기 처리
+                      >
+                        <img
+                          src={`/image/${categoryValue}/${product.productname}.jpg`}
+                          alt={product.productname}
+                          onError={ErrorImageHandler}
+                          width={50}
+                          height={50}
+                        />
+                        <p>제품명: {product.productname}</p>
+                        <p>가격: {product.price.toLocaleString()}원</p>
+                        <p>별점: {product.starrating}/5</p>
+                      </div>
+                    );
+                  });
                 } catch (err) {
                   console.error("JSON 파싱 에러:", err);
                   return <p>추천 데이터를 처리하는 중 오류가 발생했습니다.</p>;
