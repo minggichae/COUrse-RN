@@ -5,6 +5,7 @@ import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
 import { motion, useAnimation } from 'framer-motion';
+import Hamburger from "../sideoption/Hamburger.jsx";
 
 
 export default function Product( {scrollRef, showInfo} ) {
@@ -94,7 +95,7 @@ export default function Product( {scrollRef, showInfo} ) {
           />
           </motion.div>
         <div className="Error__container">{printCountError}</div>    
-        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div> 
+        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div>
         <button className="Custom-btn Scroll__button" onClick={handleResult}>
           추천 받기
         </button> 

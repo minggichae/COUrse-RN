@@ -55,19 +55,91 @@ header {
   font-weight: bold;
 }
 
-.Header__button {
-  color: black;
-  z-index: 5;
-  position:absolute;
-  right: 10px; /* 부모 요소의 오른쪽 끝에서 10px 떨어지도록 설정 */
+
+/*hamburger*/
+.Hamburger__container {
+  position: relative; /* 리스트의 위치 기준을 버튼으로 설정 */
   display: grid;
-  justify-items: center;
-  padding: 30px;
- 
+  align-items: center;
+  z-index:5; 
 }
 
-.Hamburger {
-  margin-bottom: 15px;
+.Hamburger__button {
+  color: black;
+  z-index: 5;
+  display: grid;
+  justify-items: center;
+  padding: 15px;
+  width: 170px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Header__hamburger {
+  position: absolute; /* 독립적으로 배치 */
+  right: 20px; /* 오른쪽 여백 */
+  z-index: 10; /* 다른 요소 위로 배치 */
+}
+
+.HamburgerMenu {
+  margin: 5px 0px 15px 0px;
+}
+
+.Hamburger__list {
+  position: absolute; /* 버튼을 기준으로 리스트 위치 설정 */
+  top: 100%; /* 버튼 아래로 배치 */
+  right: 0; /* 버튼의 오른쪽 끝에 맞춤 */
+  background-color: white;
+  width: 150px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 10; /* 다른 요소 위로 배치 */
+  font-style: normal;
+  font-size: 17px;
+  color: #681212;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.Hamburger__list li {
+  padding: 8px 12px;
+}
+
+.Hamburger__list li:hover {
+  background-color: #f0f0f0; /* 호버 효과 */
+}
+
+.description__box {
+  position: absolute;
+  bottom: 70%;
+  transform: translateY(-50%); /* 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.8); /* 어두운 배경 */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+}
+
+@keyframes fadeout { 	
+  0% {
+    opacity: 0; 
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes showBars {
