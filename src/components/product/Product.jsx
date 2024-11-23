@@ -115,10 +115,10 @@ export default function Product( {scrollRef, showInfo} ) {
 }
 
 //TODO Front
-//todo: 스크롤 아래로 내리면 위에 있는 explanation 없어지게 하기. result 보였을때도 마찬가지임
-//todo: 오른쪽 상단 버튼 누르면 사이드바 or 드롭다운으로 카테고리 정보 나와야함
-//todo: 전체 색깔 처리 바꿔야 함(background, header, p, star__rating, dropdown__container)
-//todo: product result css(card, background) 
+//todo: 시점 처리(스크롤 뷰에 따라서 배경 색 변환 및 요소 생성, 시점에서 벗어나면 다시 사라지게 하기)
+//todo: useref를 이용해서 추천받기 버튼을 누르면 상품 리스트로 시점 변환
+//todo: css - background, text color, button color, dropdown
+//todo: background에 있는 animation(li) 정보 기입란이랑 추천 리스트에도 추가 해야함.
 
 //TODO back
 //todo: 데이터 서버로 넣기(Node로 서버 생성, DB 테이블 생성)
@@ -136,3 +136,5 @@ export default function Product( {scrollRef, showInfo} ) {
 //TODO Feedback
 //todo: UI/UX 검토
 //todo: 기능 테스트 및 수정 or 개선
+
+

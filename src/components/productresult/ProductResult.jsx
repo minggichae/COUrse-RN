@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {motion, transform} from 'framer-motion';
 
 export default function ProductResult({
   categoryValue,
@@ -84,9 +85,9 @@ export default function ProductResult({
   return (
     <>
       <div className="Response__container">
-        <h2>추천 상품 목록</h2>
+        <h2>아래의 상품을 추천 드릴게요! 클릭하면 구매 사이트로 이동해요.</h2>
         {loading ? (
-          <p>상품 추천 중...</p>
+          <div className="Loading__Spinner"></div>
         ) : (
           <div className="Product__Result__Container">
             {response &&
@@ -98,18 +99,24 @@ export default function ProductResult({
 
                   // 파싱된 데이터가 배열 형태일 경우 처리
                   return products.map((product, index) => (
-                    <div className="Product__Result" key={index}>
+                    <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{duration:1, delay: index*0.2}}
+                    whileTap={{ scale: 0.95, rotateZ: 1.7 }}
+                    className="Product__Result" 
+                    key={index}>
                       <img
                         src={`/image/${categoryValue}/${product.productname}.jpg`}
                         alt={product.productname}
                         onError={ErrorImageHandler}
-                        width={50}
-                        height={50}
+                        width={100}
+                        height={100}
                       />
                       <p>제품명: {product.productname}</p>
                       <p>가격: {product.price.toLocaleString()}원</p>
                       <p>별점: {product.starrating}/5</p>
-                    </div>
+                    </motion.div>
                   ));
                 } catch (err) {
                   console.error("JSON 파싱 에러:", err);

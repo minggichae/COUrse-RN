@@ -13,8 +13,7 @@
   --c1: blue;
   --c2: white;
   --c3: #eef; 
-  */
-}
+  */}
 
 header {
   height: 50vh;
@@ -353,6 +352,7 @@ p {
   min-height: 100vh;
   height: auto;
   padding-top: 70px;
+  background-color: hwb(206 38% 20%);
 }
 
 .Product__main p {
@@ -614,7 +614,7 @@ p {
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: "Lato", sans-serif;
+  font-family: Oswald, Montserrat, arial, sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -702,13 +702,15 @@ p {
 /*result*/
 .Response__container {
   position: relative;
-  background-color: rgb(107, 46, 46);
+  background-color: #4b8ec5;
+  margin-top: 200px;
+  min-height: 30vh;
 }
 
 .Product__Result {
   /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
   box-sizing: border-box;
-  width: 190px;
+  width: 250px;
   height: 254px;
   background: rgba(99, 89, 89, 0.253);
   border: 1px solid white;
@@ -718,9 +720,9 @@ p {
   text-align: center;
   cursor: pointer;
   transition: all 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-content: center;
+  justify-items: center;
   user-select: none;
   font-weight: bolder;
   color: black;
@@ -736,7 +738,35 @@ p {
   transform: scale(0.95) rotateZ(1.7deg);
 }
 
+.Product__Result p {
+  font-size:20px;
+  margin:10px 0px 10px 0px;
+}
+
 .Product__Result__Container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  font-family: Oswald, Montserrat, arial, sans-serif;
+}
+
+.Loading__Spinner {
+    width: 50px;
+    height: 50px;
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #383636; /* Black */
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+    position: absolute;
+    right: 49%;
+    top: 50%;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -62,7 +62,7 @@ export default function Hamburger() {
 
     return (
         <div className="Hamburger__container" ref={scope}>    
-            <motion.button className="Hamburger__button" onClick={handleOpen}>
+            <motion.button className="Hamburger__button" onClick={handleOpen} whileTap={{ scale: 0.85 }}>
               <HamburgerMenu
                 isOpen={isOpen}
                 height={25}
