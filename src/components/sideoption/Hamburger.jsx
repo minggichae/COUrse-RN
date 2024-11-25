@@ -65,9 +65,10 @@ export default function Hamburger() {
             <motion.button className="Hamburger__button" onClick={handleOpen} whileTap={{ scale: 0.85 }}>
               <HamburgerMenu
                 isOpen={isOpen}
-                height={25}
+                height={18}
                 strokeWidth={4}
                 className="HamburgerMenu"
+                color="white"
               />
               카테고리 종류
             </motion.button>

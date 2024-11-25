@@ -6,6 +6,8 @@ export default function ProductResult({
   result,
   starScore,
   printCount,
+  showResult,
+  scrollRef
 }) {
   const [response, setResponse] = useState(""); // 응답한 내용 저장하는 state
   const [loading, setLoading] = useState(false); // 추천 상품이 나오기 전 로딩중이라는 문구를 띄우기 위한 state
@@ -82,10 +84,17 @@ export default function ProductResult({
     }
   }, [result]);
 
+  useEffect(() => {
+    if(showResult && scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth"})
+    }
+  }, [showResult, scrollRef]);
+
   return (
     <>
+      <div ref={scrollRef}>
       <div className="Response__container">
-        <h2>아래의 상품을 추천 드릴게요! 클릭하면 구매 사이트로 이동해요.</h2>
+        <p>아래의 상품을 추천 드릴게요! 클릭하면 구매 사이트로 이동해요.</p>
         {loading ? (
           <div className="Loading__Spinner"></div>
         ) : (
@@ -103,7 +112,6 @@ export default function ProductResult({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{duration:1, delay: index*0.2}}
-                    whileTap={{ scale: 0.95, rotateZ: 1.7 }}
                     className="Product__Result" 
                     key={index}>
                       <img
@@ -125,6 +133,7 @@ export default function ProductResult({
               })()}
           </div>
         )}
+      </div>
       </div>
     </>
   );

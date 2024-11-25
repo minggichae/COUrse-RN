@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Star from "../sideoption/Star.jsx";
 import Dropdown from "../sideoption/Dropdown.jsx";
-import Layout from "../layout/Layout.jsx";
 import ProductResult from "../productresult/ProductResult.jsx";
 import { ReactTyped } from "react-typed";
 import { motion, useAnimation } from 'framer-motion';
@@ -17,6 +16,7 @@ export default function Product( {scrollRef, showInfo} ) {
   const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
   const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
   const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
+  const [showResult, setShowResult] = useState(false);
 
   const saveCategory = (e) => {
     setCategoryValue(e.target.value);
@@ -47,21 +47,23 @@ export default function Product( {scrollRef, showInfo} ) {
 
     if (categoryValue && starScore && printCount) {
       setResult(true);
+      setShowResult(true);
     }
   };
+
+  
   return (
     <>
     {showInfo && (
-      <div ref={scrollRef}>
-
+      <div ref={scrollRef}>  
       <div className="Product__main">
         <div>
           <motion.div
-            initial={{opacity:0, y:50}}
-            animate={{opacity:1, y:0}}
-            transition={{duration:3}}
+            initial={{opacity:0, x:120}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1.5}}
           >
-          <p>추천 받고 싶은 제품의 카테고리를 입력해주세요!</p> 
+          <p>추천 받고 싶은 제품의 카테고리 입력하기</p> 
           <input
             type="text"
             placeholder="카테고리 입력란"
@@ -73,9 +75,9 @@ export default function Product( {scrollRef, showInfo} ) {
         </div>
         <div className="Error__container">{categoryError}</div>
           <motion.div
-            initial={{opacity:0, y:50}}
-            animate={{opacity:1, y:0}}
-            transition={{duration:5}}
+            initial={{opacity:0, x:-120}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1.5, delay: 1}}
           >
           <Star  
             starScore = {starScore}
@@ -84,9 +86,9 @@ export default function Product( {scrollRef, showInfo} ) {
         </motion.div>
         <div className="Error__container">{starScoreError}</div>
           <motion.div
-            initial={{opacity:0, y:50}}
-            animate={{opacity:1, y:0}}
-            transition={{duration:8}}
+            initial={{opacity:0, x:120}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1.5, delay: 2}}
             style={{position: 'relative', zIndex: 5}}
           >
           <Dropdown 
@@ -96,7 +98,7 @@ export default function Product( {scrollRef, showInfo} ) {
           </motion.div>
         <div className="Error__container">{printCountError}</div>    
         <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div>
-        <button className="Custom-btn Scroll__button" onClick={handleResult}>
+        <button className="Custom-btn Scroll__button button__two" onClick={handleResult}>
           추천 받기
         </button> 
         {result && (
@@ -105,6 +107,8 @@ export default function Product( {scrollRef, showInfo} ) {
             result={result}
             starScore={starScore}
             printCount={printCount}
+            showResult={showResult}
+            scrollRef={scrollRef}
           />
         )}
       </div>
@@ -115,17 +119,17 @@ export default function Product( {scrollRef, showInfo} ) {
 }
 
 //TODO Front
-//todo: 시점 처리(스크롤 뷰에 따라서 배경 색 변환 및 요소 생성, 시점에서 벗어나면 다시 사라지게 하기)
-//todo: useref를 이용해서 추천받기 버튼을 누르면 상품 리스트로 시점 변환
 //todo: css - background, text color, button color, dropdown
 //todo: background에 있는 animation(li) 정보 기입란이랑 추천 리스트에도 추가 해야함.
+
 
 //TODO back
 //todo: 데이터 서버로 넣기(Node로 서버 생성, DB 테이블 생성)
 //todo: request, response 코드 작성(프론트한테 데이터 넘겨줘야 함)
 
 //TODO AI
-//todo: ??
+//!! feedback: 이미지 쿠팡에 있는 걸로 바꿔야 함. 저작권 문제 어떻게 됐는지? + 지금 구글 이미지에 배경 블러처리 돼 있는거 바꿔야함
+
 
 //TODO 서류 
 //todo: 캡스톤 디자인 대회 신청할건지?
