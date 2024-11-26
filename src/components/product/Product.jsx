@@ -9,12 +9,15 @@ import Hamburger from "../sideoption/Hamburger.jsx";
 
 export default function Product( {scrollRef, showInfo} ) {
 
+export default function Product({ scrollRef, showInfo }) {
   const [categoryValue, setCategoryValue] = useState("");
   const [categoryError, setCategoryError] = useState("");
   const [starScoreError, setStarScoreError] = useState("");
   const [printCountError, setPrintCountError] = useState("");
   const [printCount, setPrintCount] = useState(null); //AI한테 전해줄 품목 개수를 담은 변수
   const [starScore, setStarScore] = useState(0); //AI한테 전해줄 별점 개수를 담은 변수
+
+  const [result2, setResult2] = useState(false); // 재추천 받기 버튼 활성화 여부 State
   const [result, setResult] = useState(""); // 추천 받기 버튼 활성화 여부 State
   const [showResult, setShowResult] = useState(false);
 
@@ -46,8 +49,16 @@ export default function Product( {scrollRef, showInfo} ) {
     }
 
     if (categoryValue && starScore && printCount) {
-      setResult(true);
-      setShowResult(true);
+      if (result2) {
+        setResult(true);
+        setResult2(false);
+        setShowResult(true);
+      } else {
+        setResult(false);
+        setResult2(true);
+        setShowResult(true);
+      }
+      
     }
   };
 
@@ -99,12 +110,13 @@ export default function Product( {scrollRef, showInfo} ) {
         <div className="Error__container">{printCountError}</div>    
         <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div>
         <button className="Custom-btn Scroll__button button__two" onClick={handleResult}>
-          추천 받기
+          {result || result2 ? "재추천 받기" : "추천 받기"}
         </button> 
-        {result && (
+        {(result || result2) && (
           <ProductResult
             categoryValue={categoryValue}
             result={result}
+            result2={result2}
             starScore={starScore}
             printCount={printCount}
             showResult={showResult}
@@ -119,9 +131,6 @@ export default function Product( {scrollRef, showInfo} ) {
 }
 
 //TODO Front
-//todo: css - background, text color, button color, dropdown
-//todo: background에 있는 animation(li) 정보 기입란이랑 추천 리스트에도 추가 해야함.
-
 
 //TODO back
 //todo: 데이터 서버로 넣기(Node로 서버 생성, DB 테이블 생성)
@@ -131,7 +140,7 @@ export default function Product( {scrollRef, showInfo} ) {
 //!! feedback: 이미지 쿠팡에 있는 걸로 바꿔야 함. 저작권 문제 어떻게 됐는지? + 지금 구글 이미지에 배경 블러처리 돼 있는거 바꿔야함
 
 
-//TODO 서류 
+//TODO 서류
 //todo: 캡스톤 디자인 대회 신청할건지?
 //todo: 논문 초안 작성
 //todo: 발표 준비 및 PPT 완성(FRONT, BACK, AI 알고리즘 정리 필요)
