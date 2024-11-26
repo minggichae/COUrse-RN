@@ -37,7 +37,7 @@ header {
 .Header__r {
   color: rgb(255, 38, 0);
   font-family: Arial, sans-serif;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .Header__s {
@@ -55,12 +55,11 @@ header {
 .Header__button {
   color: black;
   z-index: 5;
-  position:absolute;
+  position: absolute;
   right: 10px; /* 부모 요소의 오른쪽 끝에서 10px 떨어지도록 설정 */
   display: grid;
   justify-items: center;
   padding: 30px;
- 
 }
 
 .Hamburger {

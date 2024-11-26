@@ -102,13 +102,15 @@ export default function Product({ scrollRef, showInfo }) {
             >
               {result || result2 ? "재추천 받기" : "추천 받기"}
             </button>
-            <ProductResult
-              categoryValue={categoryValue}
-              result={result}
-              result2={result2}
-              starScore={starScore}
-              printCount={printCount}
-            />
+            {(result || result2) && (
+              <ProductResult
+                categoryValue={categoryValue}
+                result={result}
+                result2={result2}
+                starScore={starScore}
+                printCount={printCount}
+              />
+            )}
           </div>
         </div>
       )}
