@@ -367,7 +367,7 @@ p {
 
 /*layout - https://devdevout.com/css/css-animated-backgrounds */
 .background {
-  background: linear-gradient(to top, #c6ffdd, #fbd786, #f7797d);
+  background: linear-gradient(to top, #ace09f, #fbd786, #f7797d);
   min-height: 100vh;
   width: 100%;
   height: auto;
@@ -750,7 +750,6 @@ p {
 /*result*/
 .Response__container {
   position: relative;
-  background: linear-gradient(to bottom, rgb(235, 226, 162),#e98b8e, #f7797d);
   margin-top: 200px;
   min-height: 90vh;
 }
