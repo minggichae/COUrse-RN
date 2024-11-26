@@ -368,7 +368,6 @@ p {
 /*layout - https://devdevout.com/css/css-animated-backgrounds */
 .background {
   background: linear-gradient(to top, #c6ffdd, #fbd786, #f7797d);
-  background: -webkit-linear-gradient(to left, #8febfb, #4e54c8);
   min-height: 100vh;
   width: 100%;
   height: auto;
