@@ -6,9 +6,6 @@ import { ReactTyped } from "react-typed";
 import { motion, useAnimation } from 'framer-motion';
 import Hamburger from "../sideoption/Hamburger.jsx";
 
-
-export default function Product( {scrollRef, showInfo} ) {
-
 export default function Product({ scrollRef, showInfo }) {
   const [categoryValue, setCategoryValue] = useState("");
   const [categoryError, setCategoryError] = useState("");
@@ -110,7 +107,7 @@ export default function Product({ scrollRef, showInfo }) {
         <div className="Error__container">{printCountError}</div>    
         <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div>
         <button className="Custom-btn Scroll__button button__two" onClick={handleResult}>
-          {result || result2 ? "재추천 받기" : "추천 받기"}
+          {result || result2 ? "상품 다시 추천 받기" : "추천 받기"}
         </button> 
         {(result || result2) && (
           <ProductResult
@@ -129,6 +126,7 @@ export default function Product({ scrollRef, showInfo }) {
     </>
   );
 }
+
 
 //TODO Front
 
@@ -149,5 +147,3 @@ export default function Product({ scrollRef, showInfo }) {
 //TODO Feedback
 //todo: UI/UX 검토
 //todo: 기능 테스트 및 수정 or 개선
-
-
