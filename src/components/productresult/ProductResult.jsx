@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductUrls from "./ProductUrls";
+import {motion, transform} from 'framer-motion';
+
 
 export default function ProductResult({
   categoryValue,
@@ -7,6 +9,8 @@ export default function ProductResult({
   result2,
   starScore,
   printCount,
+  showResult,
+  scrollRef
 }) {
   const [response, setResponse] = useState(""); // 응답한 내용 저장하는 state
   const [loading, setLoading] = useState(false); // 추천 상품이 나오기 전 로딩중이라는 문구를 띄우기 위한 state
@@ -88,12 +92,19 @@ export default function ProductResult({
     CallGPT();
   }, [result, result2]);
 
+  useEffect(() => {
+    if(showResult && scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth"})
+    }
+  }, [showResult, scrollRef]);
+
   return (
     <>
+      <div ref={scrollRef}>
       <div className="Response__container">
-        <h2>추천 상품 목록</h2>
+        <p>아래의 상품을 추천 드릴게요! 클릭하면 구매 사이트로 이동해요.</p>
         {loading ? (
-          <p>상품 추천 중...</p>
+          <div className="Loading__Spinner"></div>
         ) : (
           <div className="Product__Result__Container">
             {response &&
@@ -120,24 +131,28 @@ export default function ProductResult({
                       }
                     };
                     return (
-                      <div
-                        className="Product__Result"
-                        key={index}
-                        onClick={OpenUrl} // div 영역 클릭시 링크 바로가기 처리
+                    <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{duration:1, delay: index*0.2}}
+                    className="Product__Result" 
+                    key={index}>
+                    onClick={OpenUrl} // div 영역 클릭시 링크 바로가기 처리
                       >
                         <img
                           src={`/image/${categoryValue}/${product.productname}.jpg`}
                           alt={product.productname}
                           onError={ErrorImageHandler}
-                          width={50}
-                          height={50}
+                          width={100}
+                          height={100}
                         />
                         <p>제품명: {product.productname}</p>
                         <p>가격: {product.price.toLocaleString()}원</p>
                         <p>별점: {product.starrating}/5</p>
-                      </div>
+                      </motion.div>
                     );
                   });
+
                 } catch (err) {
                   console.error("JSON 파싱 에러:", err);
                   return <p>추천 데이터를 처리하는 중 오류가 발생했습니다.</p>;
@@ -145,6 +160,7 @@ export default function ProductResult({
               })()}
           </div>
         )}
+      </div>
       </div>
     </>
   );

@@ -14,11 +14,11 @@ export default function Dropdown({setPrintCount}) {
     
     return (
       <>
-      <p>추천 품목 개수를 선택해주세요!</p>
+      <p>추천 품목 개수 선택하기</p>
       <div className='Dropdown__container'>     
           <div className="Dropdown" onClick={() => {setView(!view)}}> {/*click시 view 상태 반대로*/}
-	        {recommendItem}
-	        {view ? ' ▲' : ' ▼'}       
+	        <span>{recommendItem}</span>
+	        <span>{view ? ' ▲' : ' ▼'}</span>      
             <div className={`Dropdown__detail ${view ? 'show' : ''}`}>      
               <div onClick={() => handlePrintcount("10개 추천 받기", 10)}>10개</div>
                 <div onClick={() => handlePrintcount("20개 추천 받기", 20)}>20개</div>
@@ -30,7 +30,3 @@ export default function Dropdown({setPrintCount}) {
       </>
     );
   }
-
-
-  
-  

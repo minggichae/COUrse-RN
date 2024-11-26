@@ -1,15 +1,11 @@
-import React, {useState} from "react";
+import React from "react";
 import "../../App.css"
-import HamburgerMenu from "react-hamburger-menu";
+import Hamburger from "../sideoption/Hamburger";
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleOpen = () => {
-        setIsOpen(!isOpen);
-    }
 
     return (
+        <>
         <header>
             <div className="Header__text__container">
                 <h1 className="Header__COU">COU</h1>
@@ -18,19 +14,14 @@ export default function Header() {
                 <h1 className="Header__e">e</h1>
             </div>
             
-            
-            <button className="Header__button" onClick={handleOpen}>
-            <HamburgerMenu
-                    isOpen={isOpen}
-                    height={25}
-                    strokeWidth={4}
-                    className='Hamburger'   
-                />
-            카테고리 종류
-            </button>
+            <div className="Header__hamburger">
+                <Hamburger />
+            </div>
+
             <div>
                 <p>쿠팡 구매 품목 추천 사이트</p>
             </div>
         </header>
+        </>
     );
 }
