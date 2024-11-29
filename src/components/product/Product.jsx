@@ -105,7 +105,7 @@ export default function Product({ scrollRef, showInfo }) {
               className="Custom-btn Scroll__button button__two"
               onClick={handleResult}
             >
-              {result || result2 ? "재추천 받기" : "추천 받기"}
+              {result || result2 ? "상품 다시 추천 받기" : "추천 받기"}
             </button>
             {(result || result2) && (
               <ProductResult
