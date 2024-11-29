@@ -120,10 +120,52 @@ export default function Product({ scrollRef, showInfo }) {
             )}
           </div>
         </div>
-      )}
+        <div className="Error__container">{categoryError}</div>
+          <motion.div
+            initial={{opacity:0, x:-120}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1.5, delay: 1}}
+          >
+          <Star  
+            starScore = {starScore}
+            setStarScore = {setStarScore}
+          />
+        </motion.div>
+        <div className="Error__container">{starScoreError}</div>
+          <motion.div
+            initial={{opacity:0, x:120}}
+            animate={{opacity:1, x:0}}
+            transition={{duration:1.5, delay: 2}}
+            style={{position: 'relative', zIndex: 5}}
+          >
+          <Dropdown 
+            printCount = {printCount}
+            setPrintCount = {setPrintCount}
+          />
+          </motion.div>
+        <div className="Error__container">{printCountError}</div>    
+        <div> {/* <div>추가 할 성능 고려하기, 가격 높은 순 낮은 순 필터링</div>*/} </div>
+        <button className="Custom-btn Scroll__button button__two" onClick={handleResult}>
+          {result || result2 ? "상품 다시 추천 받기" : "추천 받기"}
+        </button> 
+        {(result || result2) && (
+          <ProductResult
+            categoryValue={categoryValue}
+            result={result}
+            result2={result2}
+            starScore={starScore}
+            printCount={printCount}
+            showResult={showResult}
+            scrollRef={scrollRef}
+          />
+        )}
+      </div>
+      </div>
+    )}   
     </>
   );
 }
+
 
 //TODO Front
 
