@@ -20,8 +20,6 @@ export default function ProductResult({
   };
   // 버튼 클릭시 실행할 함수
   const CallGPT = async (e) => {
-    // // 카테고리 값이 없으면 return 실행
-
     setLoading(true); // 로딩 상태를 true로 설정
 
     try {
