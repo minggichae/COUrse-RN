@@ -21,7 +21,7 @@ export default function App() {
       <Product 
         scrollRef = {scrollRef} 
         showInfo = {showInfo}
-      /> 
+      />
       </Layout>     
       <Footer />
     </>

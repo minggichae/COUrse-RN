@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { ReactTyped } from 'react-typed';
 import { motion, useAnimation } from "framer-motion";
+import ExplanationLayout from "../layout/Layout";
 
 export default function Explanation( {scrollRef, setShowInfo, showInfo} ) {
 
@@ -55,12 +56,12 @@ export default function Explanation( {scrollRef, setShowInfo, showInfo} ) {
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 1}}
             >
-            <button className="Custom-btn Scroll__button" onClick={()=>setShowInfo(true)}>
+            <button className="Custom-btn Scroll__button button__one" onClick={()=>setShowInfo(true)}>
                 상품 추천 받으러 가기
             </button>
             </motion.div>
             </div>
-        )}     
+        )}   
         </> 
     )
   }

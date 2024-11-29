@@ -1,6 +1,6 @@
 /*header - https://wpdean.com/css-header/ */
 :root {
-  --bg: #f5f5dc;
+  --bg: #e2e1e1d5;
   --c1: #642b2b;
   --c2: #000000;
   --c3: #0585b8;
@@ -25,6 +25,7 @@ header {
   align-items: center;
   position: relative;
   background-color: var(--bg);
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Header__text__container {
@@ -33,40 +34,108 @@ header {
 
 .Header__COU {
   color: rgb(78, 0, 0);
-  font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
 .Header__r {
   color: var(--cr);
-  font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
 .Header__s {
   color: var(--cs);
-  font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
 .Header__e {
   color: var(--ce);
-  font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
-.Header__button {
-  color: black;
-  z-index: 5;
-  position: absolute;
-  right: 10px; /* 부모 요소의 오른쪽 끝에서 10px 떨어지도록 설정 */
+/*hamburger*/
+.Hamburger__container {
+  position: relative; /* 리스트의 위치 기준을 버튼으로 설정 */
   display: grid;
-  justify-items: center;
-  padding: 30px;
+  align-items: center;
+  z-index: 5;
 }
 
-.Hamburger {
-  margin-bottom: 15px;
+.Hamburger__button {
+  color: black;
+  z-index: 5;
+  display: grid;
+  justify-items: center;
+  padding: 15px;
+  width: 140px;
+  background-color: rgb(12, 154, 248);
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Header__hamburger {
+  position: absolute; /* 독립적으로 배치 */
+  right: 20px; /* 오른쪽 여백 */
+  z-index: 10; /* 다른 요소 위로 배치 */
+}
+
+.HamburgerMenu {
+  margin: 10px 0px 15px 0px;
+}
+
+.Hamburger__list {
+  position: absolute; /* 버튼을 기준으로 리스트 위치 설정 */
+  top: 100%; /* 버튼 아래로 배치 */
+  right: 0; /* 버튼의 오른쪽 끝에 맞춤 */
+  background-color: white;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 10; /* 다른 요소 위로 배치 */
+  font-style: normal;
+  font-size: 17px;
+  color: #000000;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.Hamburger__list li {
+  padding: 8px 12px;
+}
+
+.Hamburger__list li:hover {
+  background-color: #f0f0f0; /* 호버 효과 */
+}
+
+.description__box {
+  position: absolute;
+  bottom: 70%;
+  transform: translateY(-50%); /* 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.8); /* 어두운 배경 */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes showBars {
@@ -280,21 +349,23 @@ p {
   min-height: 100vh;
   height: auto;
   padding-top: 70px;
+  font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
 }
 
 .Product__main p {
-  font-size: 20px;
+  font-size: 23px;
+  font-weight: normal;
   margin-bottom: 20px;
   margin-top: 50px;
-  color: white;
+  color: black;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
 /*layout - https://devdevout.com/css/css-animated-backgrounds */
 .background {
-  background: #7eaed6;
-  background: -webkit-linear-gradient(to left, #8febfb, #4e54c8);
+  background: linear-gradient(to top, #ace09f, #fbd786, #f7797d);
   min-height: 100vh;
   width: 100%;
   height: auto;
@@ -305,7 +376,7 @@ p {
   top: 0;
   left: 0;
   width: 90%;
-  height: 90%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -315,22 +386,24 @@ p {
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.397);
   animation: animate 25s linear infinite;
+  border-radius: 100%;
   bottom: calc(-50vh);
+  z-index: 2;
 }
 
 .background__block__event li:nth-child(1) {
   left: 25%;
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
 }
 
 .background__block__event li:nth-child(2) {
   left: 10%;
   width: 70px;
   height: 70px;
-  animation-duration: 9s;
+  animation-duration: 20s;
 }
 
 .background__block__event li:nth-child(3) {
@@ -360,8 +433,8 @@ p {
 
 .background__block__event li:nth-child(7) {
   left: 35%;
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
 }
 
 .background__block__event li:nth-child(8) {
@@ -380,36 +453,57 @@ p {
 
 .background__block__event li:nth-child(10) {
   left: 85%;
-  width: 150px;
-  height: 150px;
-  animation-duration: 11s;
+  width: 70px;
+  height: 70px;
+  animation-duration: 20s;
 }
 
 .background__block__event li:nth-child(11) {
   left: 75%;
   width: 50px;
   height: 50px;
-  animation-duration: 11s;
+  animation-duration: 15s;
 }
 
 .background__block__event li:nth-child(12) {
   left: 55%;
-  width: 130px;
-  height: 130px;
+  width: 50px;
+  height: 50px;
+  animation-duration: 19s;
+}
+
+.background__block__event li:nth-child(13) {
+  left: 55%;
+  width: 45px;
+  height: 45px;
+  animation-duration: 17s;
+}
+
+.background__block__event li:nth-child(14) {
+  left: 55%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 15s;
+}
+
+.background__block__event li:nth-child(15) {
+  left: 55%;
+  width: 70px;
+  height: 70px;
   animation-duration: 11s;
 }
 
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
+    opacity: 0.75;
+    border-radius: 100%;
   }
 
   100% {
-    transform: translateY(-200vh) rotate(720deg);
+    transform: translateY(-400vh) rotate(720deg);
     opacity: 0;
-    border-radius: 50%;
+    border-radius: 100%;
   }
 }
 
@@ -418,12 +512,13 @@ p {
   position: relative;
   width: 100%;
   text-align: center;
-  background-color: #26272b;
+  background-color: --bg;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .footer_p {
-  color: gray;
-  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
 }
 
 .flex__container {
@@ -453,14 +548,14 @@ p {
 .Fastar {
   color: yellow;
   cursor: pointer;
-  font-size: 52px;
+  font-size: 70px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .FaRegstar {
-  color: rgb(207, 205, 205);
+  color: rgb(173, 185, 0);
   cursor: pointer;
-  font-size: 52px;
+  font-size: 70px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -477,9 +572,9 @@ p {
 }
 
 .Star__rating__container p {
-  font-size: 20px;
+  font-size: 23px;
   margin-bottom: 10px;
-  color: white;
+  color: black;
 }
 
 /*dropdown*/
@@ -490,25 +585,27 @@ p {
 }
 
 .Dropdown {
-  background: #0b868e;
+  background: linear-gradient(180deg, #f7ba6c, rgb(230, 109, 57));
   color: #fff;
   font-weight: bold;
+  font-size: 18px;
   padding: 20px;
   border: none;
   cursor: pointer;
-  font-family: "Lato", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 500;
+  border-radius: 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .Dropdown:hover {
-  background: #66cc99;
-  color: #333;
+  background: linear-gradient(180deg, #ff8856, #ff7043);
 }
 
 .Dropdown__detail {
+  background: linear-gradient(180deg, #ffe5d1, #ffc6a1);
   position: absolute;
   width: 120px;
-  background: #ccc;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
   z-index: 5;
   margin-top: 20px;
@@ -530,7 +627,7 @@ p {
 }
 
 .Dropdown__detail div:hover {
-  background: #333;
+  background-color: #ff8856;
   color: #fff;
 }
 
@@ -541,7 +638,7 @@ p {
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: "Lato", sans-serif;
+  font-family: Oswald, Montserrat, arial, sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -554,8 +651,8 @@ p {
 }
 
 .Scroll__button {
-  background-color: #1fd1f9;
-  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  background-color: #f7797d;
+  background-image: #f7797d;
   border: none;
   z-index: 1;
 }
@@ -567,7 +664,6 @@ p {
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #663dff;
   border-radius: 5px;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
@@ -584,11 +680,23 @@ p {
   top: 2px;
 }
 
+.button__one:after {
+  background-color: #ff3d3d;
+}
+
+.button__two {
+  background-color: #f7ae50;
+}
+
+.button__two:after {
+  background-color: #ff8622;
+}
+
 /*category*/
 .Category__container {
   width: 270px;
-  height: 30px;
-  font-size: 13px;
+  height: 40px;
+  font-size: 20px;
   font-family: "Lato", sans-serif;
   font-weight: 500;
   text-align: center;
@@ -601,12 +709,16 @@ p {
   color: rgba(168, 4, 4, 0.842);
   font-family: "Lato", sans-serif;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 20px;
   margin-bottom: 30px;
   margin-top: 10px;
 }
 
 /*explanation*/
+
+.Explain__Hidden {
+  overflow: hidden;
+}
 
 .Explain__container {
   padding: 40px;
@@ -614,6 +726,7 @@ p {
   align-items: center;
   justify-content: center;
   justify-items: center;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Basic__explanation {
@@ -629,25 +742,30 @@ p {
 /*result*/
 .Response__container {
   position: relative;
-  background-color: rgb(107, 46, 46);
+  margin-top: 200px;
+  min-height: 90vh;
+}
+
+.Response__container p {
+  color: black;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Product__Result {
   /* https://uiverse.io/SteveBloX/dangerous-warthog-85 */
   box-sizing: border-box;
-  width: 190px;
-  height: 254px;
-  background: rgba(99, 89, 89, 0.253);
+  width: 250px;
+  height: 304px;
+  background: rgba(240, 240, 240, 0.082);
   border: 1px solid white;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
   border-radius: 17px;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-content: center;
+  justify-items: center;
   user-select: none;
   font-weight: bolder;
   color: black;
@@ -656,14 +774,38 @@ p {
 
 .Product__Result:hover {
   border: 1px solid black;
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.26);
 }
 
-.Product__Result:active {
-  transform: scale(0.95) rotateZ(1.7deg);
+.Product__Result p {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
 }
 
 .Product__Result__Container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.Loading__Spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+  position: absolute;
+  right: 49%;
+  top: 50%;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

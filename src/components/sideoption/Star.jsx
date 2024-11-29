@@ -9,7 +9,7 @@ export default function Star({starScore, setStarScore}) {
         for (let i=0; i<5; i++) {
             result.push(<span key={i+1} onClick={() => setStarScore(i+1)}>
                 {
-                    starScore >= i+1 ? <FaStar className='Fastar'/> : <FaRegStar className='FaRegstar' />
+                    starScore >= i+1 ? <FaStar className='Fastar'/> : <FaStar className='FaRegstar' />
                     //FaStar: 별점 채우기
                     //FaRegStar: 별점 없애기
                 }
@@ -21,7 +21,7 @@ export default function Star({starScore, setStarScore}) {
     return (
         <>
         <div className='Star__rating__container'>
-        <p>별점을 입력해주세요!</p>       
+        <p>별점 입력하기</p>       
             {handleratingsStar()}
         </div>
         </>
