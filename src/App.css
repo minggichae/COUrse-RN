@@ -7,14 +7,14 @@
   --cr: rgb(255, 38, 0);
   --cs: rgb(212, 212, 5);
   --ce: rgb(0, 128, 0);
-  
 
   /*   
   --bg: #112;
   --c1: blue;
   --c2: white;
   --c3: #eef; 
-  */}
+  */
+}
 
 header {
   height: 50vh;
@@ -25,7 +25,7 @@ header {
   align-items: center;
   position: relative;
   background-color: var(--bg);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Header__text__container {
@@ -33,13 +33,13 @@ header {
 }
 
 .Header__COU {
-  color: rgb(78, 0, 0); 
+  color: rgb(78, 0, 0);
   font-weight: bold;
 }
 
 .Header__r {
-  color: var(--cr); 
-  font-weight: bold; 
+  color: var(--cr);
+  font-weight: bold;
 }
 
 .Header__s {
@@ -52,13 +52,12 @@ header {
   font-weight: bold;
 }
 
-
 /*hamburger*/
 .Hamburger__container {
   position: relative; /* 리스트의 위치 기준을 버튼으로 설정 */
   display: grid;
   align-items: center;
-  z-index:5; 
+  z-index: 5;
 }
 
 .Hamburger__button {
@@ -100,14 +99,13 @@ header {
   font-style: normal;
   font-size: 17px;
   color: #000000;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   display: grid;
   align-items: center;
   justify-content: center;
   overflow-y: auto;
 }
-
 
 .Hamburger__list li {
   padding: 8px 12px;
@@ -130,9 +128,9 @@ header {
   z-index: 15;
 }
 
-@keyframes fadeout { 	
+@keyframes fadeout {
   0% {
-    opacity: 0; 
+    opacity: 0;
   }
 
   100% {
@@ -351,7 +349,7 @@ p {
   min-height: 100vh;
   height: auto;
   padding-top: 70px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   overflow: hidden;
 }
 
@@ -381,7 +379,6 @@ p {
   height: 100%;
   overflow: hidden;
 }
-
 
 .background__block__event li {
   position: absolute;
@@ -516,7 +513,7 @@ p {
   width: 100%;
   text-align: center;
   background-color: --bg;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .footer_p {
@@ -595,18 +592,18 @@ p {
   padding: 20px;
   border: none;
   cursor: pointer;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 500;
   border-radius: 10%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .Dropdown:hover {
-  background: linear-gradient(180deg, #FF8856, #FF7043); 
+  background: linear-gradient(180deg, #ff8856, #ff7043);
 }
 
 .Dropdown__detail {
-  background: linear-gradient(180deg, #FFE5D1, #FFC6A1);
+  background: linear-gradient(180deg, #ffe5d1, #ffc6a1);
   position: absolute;
   width: 120px;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -630,10 +627,9 @@ p {
 }
 
 .Dropdown__detail div:hover {
-  background-color: #FF8856;
+  background-color: #ff8856;
   color: #fff;
 }
-
 
 /*button - https://inpa.tistory.com/entry/CSS-%F0%9F%92%8D-%EB%B2%84%ED%8A%BC-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%AA%A8%EC%9D%8C */
 .Custom-btn {
@@ -696,10 +692,6 @@ p {
   background-color: #ff8622;
 }
 
-
-
-
-
 /*category*/
 .Category__container {
   width: 270px;
@@ -734,7 +726,7 @@ p {
   align-items: center;
   justify-content: center;
   justify-items: center;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Basic__explanation {
@@ -756,7 +748,7 @@ p {
 
 .Response__container p {
   color: black;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Product__Result {
@@ -786,27 +778,27 @@ p {
 }
 
 .Product__Result p {
-  font-size:20px;
-  margin:10px 0px 10px 0px;
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
 }
 
 .Product__Result__Container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .Loading__Spinner {
-    width: 50px;
-    height: 50px;
-    border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #383636; /* Black */
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
-    position: absolute;
-    right: 49%;
-    top: 50%;
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+  position: absolute;
+  right: 49%;
+  top: 50%;
 }
 
 @keyframes spinner {
@@ -817,4 +809,3 @@ p {
     transform: rotate(360deg);
   }
 }
-
