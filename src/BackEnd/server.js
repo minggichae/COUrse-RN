@@ -7,7 +7,7 @@ const path = require("path"); // path(경로) 모듈
 const port = 8080; // 포트 번호
 
 const db = mysql.createConnection({
-  hos: process.env.DB_HOST, // 서버 주소
+  host: process.env.DB_HOST, // 서버 주소
   user: process.env.DB_USER, // 사용자 이름
   password: process.env.DB_PASSWORD, // 비밀번호
   database: process.env.DB_NAME, // DB 이름
