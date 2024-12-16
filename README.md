@@ -22,6 +22,8 @@ git clone https://github.com/minggichae/COUrse.git
     - 우측 상단의 톱니바퀴 모양(Settings)를 누르고, API keys에 들어갑니다.
     - 초록색의 Create new sercret key를 클릭합니다.
     - Name에다가 API Key 이름을 적고 Create secret key를 클릭하여 다음 창에서 Copy 버튼을 통해 복사를 한 후 .env 파일에다가 옮겨 적습니다.
+      <img src="public/assets/API_Create1.jpg" alt="API 키 생성">
+      <img src="public/assets/API_Create2.jpg" alt="API 키 복사">
   - `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
     - MySQL Workbench를 설치를 합니다.
       (참고: [MySQL Workbench 설치](https://giveme-happyending.tistory.com/203#article-3--%F0%9F%92%BB-mysql-%EC%84%A4%EC%B9%98) )
@@ -57,24 +59,25 @@ npm run start
 
 ## ⛓️ Service Architecture
 
-아키텍처 사진 업로드
+<img src="public/assets/Architecture.jpg" alt="기술 아키텍처">
 
 ## 📱 APP Screenshot
 
 ### 이미지 1: 메인 페이지, 카테고리
 
-![메인 페이지](메인 페이지 gif 넣기)
+![메인 페이지](COUrse1.gif)
 사이트를 실행 시 사이트의 이용 방법과 우측 상단의 카테고리 버튼을 통해 입력할 수 있는 카테고리의 종류(현재 과일, 채소만 입력가능)를 확인할 수 있고, 버튼을 통해 다음으로 이동합니다.
 
 ### 이미지 2: 상품 정보 입력
 
-![상품 정보 입력](상품 정보 gif 넣기)
+![상품 정보 입력](COUrse2.gif)
 상품에 대한 정보를 입력 후 추천을 받습니다.
 
 ### 이미지 3: 상품 추천
 
-![상품 추천](상품 추천 gif 넣기)
+![상품 추천](COUrse3.gif)
 추천 받기 버튼을 통해 상품을 추천받고, 상품 이미지 클릭 시 쿠팡 구매 사이트로 연결됩니다.
+상품을 재추천 받고 싶으면 버튼을 통해 재추천 받을 수 있습니다.
 
 ## 🚨 R&R
 
