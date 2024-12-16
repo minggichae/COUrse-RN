@@ -26,7 +26,7 @@ git clone https://github.com/minggichae/COUrse.git
     - MySQL Workbench를 설치를 합니다.
       (참고: [MySQL Workbench 설치](https://giveme-happyending.tistory.com/203#article-3--%F0%9F%92%BB-mysql-%EC%84%A4%EC%B9%98) )
     - 설치 후 Local instance MySQL에 접속한 후 다음과 같이 입력합니다.
-      (DB_README.md를 참고하시면 됩니다.)
+      (DB_README.md를 참고하시면 됩니다.[DB_README.md 바로가기](https://github.com/minggichae/COUrse/blob/main/src/BackEnd/DB_README.md))
     - 입력을 한 후 .env 파일에 옮겨 적으면 됩니다.
 
 ```env

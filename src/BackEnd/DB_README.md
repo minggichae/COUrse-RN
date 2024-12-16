@@ -1,8 +1,12 @@
+1. 카테고리 테이블 생성
+
 ```mysql
 CREATE TABLE Categories (
 category_number INT PRIMARY KEY, -- 기본 키, 카테고리의 고유 번호
 category_name VARCHAR(100) NOT NULL -- 카테고리의 이름 );
 ```
+
+2. 제품 테이블 생성
 
 ```mysql
 CREATE TABLE Products (, , , , ,
@@ -15,6 +19,16 @@ CREATE TABLE Products (, , , , ,
     FOREIGN KEY (category_number) REFERENCES Categories(category_number) -- 외래키 제약 조건
 );
 ```
+
+3. 카테고리 테이블 데이터 삽입
+
+```mysql
+INSERT INTO Categories (category_number, category_name) VALUES
+(1, '과일'),
+(2, '채소');
+```
+
+4. 제품 테이블 데이터 삽입
 
 ```mysql
 INSERT INTO products (product_number, category_number, product_name, product_price, product_starrating, product_image) VALUES
