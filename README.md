@@ -17,18 +17,21 @@ git clone https://github.com/minggichae/COUrse.git
 **Step 3.** .env 파일 안에 다음과 같이 작성합니다.
 
 - ✨ .env 파일 안에 해당되는 변수들은 다음과 같이 확인 할 수 있습니다.
+
   - `GPT_API_KEY`
+
     - OpenAI 홈페이지에 접속 후 로그인을 합니다.
     - 우측 상단의 톱니바퀴 모양(Settings)를 누르고, API keys에 들어갑니다.
     - 초록색의 Create new sercret key를 클릭합니다.
     - Name에다가 API Key 이름을 적고 Create secret key를 클릭하여 다음 창에서 Copy 버튼을 통해 복사를 한 후 .env 파일에다가 옮겨 적습니다.
+
       <img src="public/assets/API_Create1.jpg" alt="API 키 생성">
       <img src="public/assets/API_Create2.jpg" alt="API 키 복사">
+
   - `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
     - MySQL Workbench를 설치를 합니다.
       (참고: [MySQL Workbench 설치](https://giveme-happyending.tistory.com/203#article-3--%F0%9F%92%BB-mysql-%EC%84%A4%EC%B9%98) )
-    - 설치 후 Local instance MySQL에 접속한 후 다음과 같이 입력합니다.
-      (DB_README.md를 참고하시면 됩니다.[DB_README.md 바로가기](https://github.com/minggichae/COUrse/blob/main/src/BackEnd/DB_README.md))
+    - 설치 후 Local instance MySQL에 접속한 후 DB_README.md를 참고하여 입력합니다. (참고: [DB_README.md 바로가기](https://github.com/minggichae/COUrse/blob/main/src/BackEnd/DB_README.md) )
     - 입력을 한 후 .env 파일에 옮겨 적으면 됩니다.
 
 ```env
@@ -65,17 +68,20 @@ npm run start
 
 ### 이미지 1: 메인 페이지, 카테고리
 
-![메인 페이지](COUrse1.gif)
+![메인 페이지](public/assets/COUrse1.gif)
+
 사이트를 실행 시 사이트의 이용 방법과 우측 상단의 카테고리 버튼을 통해 입력할 수 있는 카테고리의 종류(현재 과일, 채소만 입력가능)를 확인할 수 있고, 버튼을 통해 다음으로 이동합니다.
 
 ### 이미지 2: 상품 정보 입력
 
-![상품 정보 입력](COUrse2.gif)
+![상품 정보 입력](public/assets/COUrse2.gif)
+
 상품에 대한 정보를 입력 후 추천을 받습니다.
 
 ### 이미지 3: 상품 추천
 
-![상품 추천](COUrse3.gif)
+![상품 추천](public/assets/COUrse3.gif)
+
 추천 받기 버튼을 통해 상품을 추천받고, 상품 이미지 클릭 시 쿠팡 구매 사이트로 연결됩니다.
 상품을 재추천 받고 싶으면 버튼을 통해 재추천 받을 수 있습니다.
 
