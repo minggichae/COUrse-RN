@@ -95,4 +95,4 @@ npm run start
 ## 🚨 R&R
 
 - 채민기[BE/팀장]: ProductResult, ProductUrls, server
-- 곽지훈[FE/팀원]: 프론트엔드 아키텍처와 주요 로직 설계 및 컴포넌트 개발(Explanation, Header, Footer, Product, Layout, Dropdown, Hamburger, Star, App), framer-motion와 npm 라이브러리를 활용한 CSS 스타일링, UI/UX 개선  
+- 곽지훈[FE/팀원]: 프론트엔드 아키텍처와 주요 로직 설계 및 컴포넌트 개발(Explanation, Header, Footer, Product, Layout, Dropdown, Hamburger, Star, App), framer-motion과과 npm 라이브러리를 활용한 CSS 스타일링, UI/UX 개선  
