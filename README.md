@@ -1,10 +1,13 @@
 # COUrse
 
 ## 🖌 Description
+>현대 사회에서 시간은 가장 중요한 자원 중 하나로 여겨지며, 특히 젊은 세대는 시간 절약과 효율성을 중시하는 소비 패턴을 보이고 있습니다. 이러한 배경에서 탄생한 ‘시성비(시간 대비 성능 비율)’ 트렌드는 다양한 산업 분야에서 큰 주목을 받고 있습니다.
+
+>COUrse는 이러한 트렌드에 발맞춰 ‘쿠팡 구매 품목 추천 시스템’을 제작하는 것을 목표로 합니다. 이 시스템은 사용자 맞춤형 추천 알고리즘을 통해 쇼핑 시간을 대폭 줄이고, 효율적인 구매 결정을 돕는 것을 목적으로 합니다.
 
 ## 🔧 How to Run
 
-❗ 본 프로젝트를 사용하기에 앞서 DB 데이터 저장 및 OpneAI API키가 필요합니다.
+❗ 본 프로젝트를 사용하기에 앞서 DB 데이터 저장 및 OpenAI API키가 필요합니다.
 
 **Step 1.** 본 프로젝트를 git clone을 통하여 복제 합니다.
 
@@ -92,4 +95,4 @@ npm run start
 ## 🚨 R&R
 
 - 채민기[BE/팀장]: ProductResult, ProductUrls, server
-- 곽지훈[FR/팀원]:
+- 곽지훈[FE/팀원]: 프론트엔드 아키텍처와 주요 로직 설계 및 컴포넌트 개발(Explanation, Header, Footer, Product, Layout, Dropdown, Hamburger, Star, App), framer-motion와 npm 라이브러리를 활용한 CSS 스타일링, UI/UX 개선  
