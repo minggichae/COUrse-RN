@@ -4,6 +4,7 @@ const app = express(); // express 모듈 관련 객체 생성 (Node.js의 create
 const cors = require("cors"); // cors 모듈
 const mysql = require("mysql"); // mysql 모듈
 const path = require("path"); // path(경로) 모듈
+const openai = require("openai"); // openai 모듈
 const port = 8080; // 포트 번호
 
 const db = mysql.createConnection({
@@ -46,11 +47,11 @@ app.use(
 // JSON 형식의 요청 본문을 파싱할 수 있도록 설정
 app.use(express.json());
 
-// 정적 파일 접근을 위한 설정
 // http://localhost:8080/image/폴더명/이미지.jpg와 같은 형식으로 입력하면 접근 가능
 // -> db를 경유하지 않고, 서버에 해당하는 이미지 경로를 가져온것이다.
 // 서버도 일종의 컴퓨터이기에 윈도우에 저장한거 마냥 서버에 이미지 폴더를 만든거다.
 // 근데, 서버가 호스팅이 되다보니 주소도 저렇게 되어있는것이다.
+// 정적 파일 접근을 위한 설정
 app.use("/image", express.static(path.join(__dirname, "image")));
 
 // 정적 파일 제공을 위한 경로 설정
@@ -131,7 +132,7 @@ app.post("/api/recommend", async (req, res) => {
     console.log(data.choices[0].message.content);
 
     // 나온 답변에다가 db 이미지 경로 붙여서 클라이언트에 반환 해주면 이미지 문제가 해결될 것으로 보임.
-    // 답변을 파싱하고 map 형태로 받아서 답변의 상품명과 db의 상품명이 일치하면 index마다 배열안에 추가해주면 될 것 같다.
+    // 답변을 파싱하고 map 형태로 받아서 답변의 상품명과 db의 상품명이 일치하면 index마다 배열안에 추가해주면 될 것 같음.
 
     // 답변이 있을 시 응답 데이터를 클라이언트에 반환
     if (data && data.choices.length > 0) {
