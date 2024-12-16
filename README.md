@@ -71,28 +71,4 @@ npm run start
 
 ### 이미지 1: 메인 페이지, 카테고리
 
-![메인 페이지](public/assets/COUrse1.gif)
-
-사이트의 이용 방법과 카테고리 버튼을 통해 입력할 수 있는 카테고리의 종류(현재 과일, 채소만 입력가능)를 확인할 수 있습니다.
-
----
-
-### 이미지 2: 상품 정보 입력
-
-![상품 정보 입력](public/assets/COUrse2.gif)
-
-상품에 대한 정보를 입력 후 추천을 받습니다.
-
----
-
-### 이미지 3: 상품 추천
-
-![상품 추천](public/assets/COUrse3.gif)
-
-추천 받기 버튼을 통해 상품을 추천받고, 상품 이미지 클릭 시 쿠팡 구매 사이트로 연결됩니다.
-재추천 버튼을 통해 재추천 받을 수 있습니다.
-
-## 🚨 R&R
-
-- 채민기[BE/팀장]: ProductResult, ProductUrls, server
-- 곽지훈[FE/팀원]: 프론트엔드 아키텍처와 주요 로직 설계 및 컴포넌트 개발(Explanation, Header, Footer, Product, Layout, Dropdown, Hamburger, Star, App), framer-motion와 npm 라이브러리를 활용한 CSS 스타일링, UI/UX 개선  
+![메인 페이지](public/asse과 npm 라이브러리를 활용한 CSS 스타일링, UI/UX 개선  
